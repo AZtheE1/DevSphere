@@ -23,3 +23,11 @@ export interface ApiResponse<T> {
   statusCode: number;
   data?: T;
 }
+
+export interface CalculatorHistory {
+  id: string;
+  user_id: string;
+  expression: string;
+  result: string;
+  created_at: string;
+}
