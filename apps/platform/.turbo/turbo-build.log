@@ -2,21 +2,15 @@
 > platform@0.1.0 build D:\user_jabu\Multi-APP\apps\platform
 > next build
 
-⚠ Invalid next.config.mjs options detected: 
-⚠     Unrecognized key(s) in object: 'turbo' at "experimental"
-⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
 ▲ Next.js 16.2.4 (Turbopack)
-- Experiments (use with caution):
-  ? turbo (invalid experimental key)
 
-⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
   Creating an optimized production build ...
-✓ Compiled successfully in 39.6s
+✓ Compiled successfully in 14.9s
   Running TypeScript ...
-  Finished TypeScript in 21.8s ...
+  Finished TypeScript in 12.4s ...
   Collecting page data using 5 workers ...
   Generating static pages using 5 workers (0/3) ...
-✓ Generating static pages using 5 workers (3/3) in 1749ms
+✓ Generating static pages using 5 workers (3/3) in 1033ms
   Finalizing page optimization ...
 
 Route (app)

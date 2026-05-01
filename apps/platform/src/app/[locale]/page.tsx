@@ -1,9 +1,11 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Scene } from '@/components/3d/Scene';
 import { Navbar } from '@/components/layout/Navbar';
 
-export default function Home() {
-  const t = useTranslations('Platform');
+export default async function Home(props: { params: Promise<{ locale: string }> }) {
+  const { locale } = await props.params;
+  setRequestLocale(locale);
+  const t = await getTranslations('Platform');
 
   return (
     <main className="relative h-screen w-full overflow-hidden">

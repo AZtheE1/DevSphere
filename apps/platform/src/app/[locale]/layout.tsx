@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@devsphere/auth";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +17,13 @@ export default async function RootLayout(props: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await props.params;
+  setRequestLocale(locale);
   const { children } = props;
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className={inter.className}>
+    <html lang={locale} suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AuthProvider>
             <div className="min-h-screen bg-[#090a0f] text-white">
