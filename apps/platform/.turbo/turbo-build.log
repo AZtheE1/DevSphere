@@ -5,53 +5,28 @@
   ▲ Next.js 14.2.1
 
    Creating an optimized production build ...
-Failed to compile.
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/4) ...
+   Generating static pages (1/4) 
+   Generating static pages (2/4) 
+   Generating static pages (3/4) 
+ ✓ Generating static pages (4/4)
+   Finalizing page optimization ...
+   Collecting build traces ...
 
-src\app\[locale]\layout.tsx
-An error occurred in `next/font`.
-
-Error: Cannot find module '@tailwindcss/postcss'
-Require stack:
-- D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js
-- D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\webpack\config\blocks\css\index.js
-- D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\webpack\config\index.js
-- D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\webpack-config.js
-- D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\webpack\plugins\next-trace-entrypoints-plugin.js
-- D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\collect-build-traces.js
-- D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\index.js
-- D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\cli\next-build.js
-    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
-    at D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\server\require-hook.js:55:36
-    at Function.resolve (node:internal/modules/helpers:193:19)
-    at loadPlugin (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:49:32)
-    at D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:56
-    at Array.map (<anonymous>)
-    at getPostCssPlugins (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:47)
-    at async D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\webpack\config\blocks\css\index.js:124:36
-    at async D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\build\webpack\loaders\next-font-loader\index.js:86:33
-    at async Span.traceAsyncFn (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\trace\trace.js:154:20)
-
-../../packages/auth/src/index.ts
-Error: 
-  [31mx[0m Expected '>', got 'value'
-    ,-[[36;1;4mD:\user_jabu\Multi-APP\packages\auth\src\index.ts[0m:40:1]
- [2m40[0m |   };
- [2m41[0m | 
- [2m42[0m |   return (
- [2m43[0m |     <AuthContext.Provider value={{ user, loading, signOut, getToken }}>
-    : [31;1m                          ^^^^^[0m
- [2m44[0m |       {children}
- [2m45[0m |     </AuthContext.Provider>
- [2m46[0m |   );
-    `----
-
-Caused by:
-    Syntax Error
-
-Import trace for requested module:
-../../packages/auth/src/index.ts
-./src/app/[locale]/layout.tsx
+Route (app)                              Size     First Load JS
+┌ ○ /_not-found                          871 B          87.9 kB
+└ ƒ /[locale]                            293 kB          383 kB
++ First Load JS shared by all            87 kB
+  ├ chunks/1c028024-1afe7d20d480106d.js  53.6 kB
+  ├ chunks/483-18bc108eabb17612.js       31.3 kB
+  └ other shared chunks (total)          2.02 kB
 
 
-> Build failed because of webpack errors
- ELIFECYCLE  Command failed with exit code 1.
+ƒ Middleware                             43.5 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
