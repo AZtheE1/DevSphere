@@ -2,30 +2,29 @@
 > platform@0.1.0 build D:\user_jabu\Multi-APP\apps\platform
 > next build
 
-  ▲ Next.js 14.2.1
+⚠ Invalid next.config.mjs options detected: 
+⚠     Unrecognized key(s) in object: 'turbo' at "experimental"
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+▲ Next.js 16.2.4 (Turbopack)
+- Experiments (use with caution):
+  ? turbo (invalid experimental key)
 
-   Creating an optimized production build ...
- ✓ Compiled successfully
-   Linting and checking validity of types ...
-   Collecting page data ...
-   Generating static pages (0/4) ...
-   Generating static pages (1/4) 
-   Generating static pages (2/4) 
-   Generating static pages (3/4) 
- ✓ Generating static pages (4/4)
-   Finalizing page optimization ...
-   Collecting build traces ...
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 39.6s
+  Running TypeScript ...
+  Finished TypeScript in 21.8s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/3) ...
+✓ Generating static pages using 5 workers (3/3) in 1749ms
+  Finalizing page optimization ...
 
-Route (app)                              Size     First Load JS
-┌ ○ /_not-found                          871 B          87.9 kB
-└ ƒ /[locale]                            293 kB          383 kB
-+ First Load JS shared by all            87 kB
-  ├ chunks/1c028024-1afe7d20d480106d.js  53.6 kB
-  ├ chunks/483-18bc108eabb17612.js       31.3 kB
-  └ other shared chunks (total)          2.02 kB
+Route (app)
+┌ ○ /_not-found
+└ ƒ /[locale]
 
 
-ƒ Middleware                             43.5 kB
+ƒ Proxy (Middleware)
 
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand

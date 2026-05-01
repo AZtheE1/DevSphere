@@ -2,73 +2,24 @@
 > @devsphere/calculator-frontend@0.1.0 build D:\user_jabu\Multi-APP\apps\calculator\frontend
 > next build
 
-  ▲ Next.js 14.2.1
+▲ Next.js 16.2.4 (Turbopack)
 
-   Creating an optimized production build ...
- ✓ Compiled successfully
-   Linting and checking validity of types ...
-   Collecting page data ...
-   Generating static pages (0/5) ...
-   Generating static pages (1/5) 
-   Generating static pages (2/5) 
-   Generating static pages (3/5) 
-Error: supabaseUrl is required.
-    at D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:51291
-    at new rH (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:51542)
- ✓ Generating static pages (5/5)
-    at rK (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:55329)
-    at 9050 (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\app\_not-found\page.js:1:2587)
-    at t (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\webpack-runtime.js:1:143)
-    at 8480 (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\app\_not-found\page.js:1:2239)
-    at Object.t [as require] (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\webpack-runtime.js:1:143)
-    at require (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:16:18270)
-    at I (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94362)
-    at C (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:92913) {
-  digest: '1631217396'
-}
+  Creating an optimized production build ...
+✓ Compiled successfully in 37.5s
+  Running TypeScript ...
+  Finished TypeScript in 14.2s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/4) ...
+  Generating static pages using 5 workers (1/4) 
+  Generating static pages using 5 workers (2/4) 
+  Generating static pages using 5 workers (3/4) 
+✓ Generating static pages using 5 workers (4/4) in 3.5s
+  Finalizing page optimization ...
 
-Error occurred prerendering page "/_not-found". Read more: https://nextjs.org/docs/messages/prerender-error
+Route (app)
+┌ ○ /
+└ ○ /_not-found
 
-Error: supabaseUrl is required.
-    at D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:51291
-    at new rH (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:51542)
-    at rK (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:55329)
-    at 9050 (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\app\_not-found\page.js:1:2587)
-    at t (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\webpack-runtime.js:1:143)
-    at 8480 (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\app\_not-found\page.js:1:2239)
-    at Object.t [as require] (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\webpack-runtime.js:1:143)
-    at require (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:16:18270)
-    at I (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94362)
-    at C (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:92913)
-Error: supabaseUrl is required.
-    at D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:51291
-    at new rH (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:51542)
-    at rK (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:55329)
-    at 9050 (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\app\page.js:25:14081)
-    at t (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\webpack-runtime.js:1:143)
-    at 8480 (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\app\page.js:19:37741)
-    at Object.t [as require] (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\webpack-runtime.js:1:143)
-    at require (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:16:18270)
-    at I (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94362)
-    at C (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:92913) {
-  digest: '3595123571'
-}
 
-Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+○  (Static)  prerendered as static content
 
-Error: supabaseUrl is required.
-    at D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:51291
-    at new rH (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:51542)
-    at rK (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\chunks\872.js:38:55329)
-    at 9050 (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\app\page.js:25:14081)
-    at t (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\webpack-runtime.js:1:143)
-    at 8480 (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\app\page.js:19:37741)
-    at Object.t [as require] (D:\user_jabu\Multi-APP\apps\calculator\frontend\.next\server\webpack-runtime.js:1:143)
-    at require (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:16:18270)
-    at I (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:94362)
-    at C (D:\user_jabu\Multi-APP\node_modules\.pnpm\next@14.2.1_react-dom@18.2.0_react@18.2.0__react@18.2.0\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:92913)
-
-> Export encountered errors on following paths:
-	/_not-found/page: /_not-found
-	/page: /
- ELIFECYCLE  Command failed with exit code 1.

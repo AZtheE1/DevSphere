@@ -12,13 +12,12 @@ export const metadata: Metadata = {
   description: "A unified interactive platform housing 40 fully functional web applications.",
 };
 
-export default async function RootLayout({
-  children,
-  params: { locale }
-}: {
+export default async function RootLayout(props: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await props.params;
+  const { children } = props;
   const messages = await getMessages();
 
   return (
