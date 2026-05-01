@@ -7,7 +7,7 @@ export const APPS: AppMetadata[] = [
     emoji: "🔢",
     category: "Tools",
     description: "Advanced scientific calculator.",
-    path: "/calculator",
+    path: process.env.NEXT_PUBLIC_CALCULATOR_URL || "http://localhost:3001",
     color: "#00d4ff",
   },
   {
@@ -16,7 +16,7 @@ export const APPS: AppMetadata[] = [
     emoji: "❓",
     category: "Tools",
     description: "Test your knowledge.",
-    path: "/quiz-app",
+    path: process.env.NEXT_PUBLIC_QUIZ_URL || "http://localhost:3003",
     color: "#00d4ff",
   },
   // More apps will be added here
