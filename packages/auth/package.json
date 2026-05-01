@@ -1,0 +1,16 @@
+{
+  "name": "@devsphere/auth",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "react": "^19.2.5"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "typescript": "^5.0.0"
+  }
+}
