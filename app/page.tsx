@@ -99,10 +99,6 @@ export default function HomeDashboard() {
       ? APPS_CATALOG
       : APPS_CATALOG.filter((app) => app.category === selectedCategory);
 
-  if (!isAuthenticated) {
-    return <LoginHero />;
-  }
-
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8">
       {/* Global Navigation Bar */}

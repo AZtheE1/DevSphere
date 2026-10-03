@@ -148,6 +148,8 @@ interface GlobalState {
   toggleDarkMode: () => void;
   toggleSound: () => void;
   addXP: (amount: number) => void;
+  setXP: (val: number) => void;
+  setStreakDays: (val: number) => void;
   launchApp: (slug: string) => void;
   openModal: (id: string) => void;
   closeModal: () => void;
@@ -168,6 +170,8 @@ export const useGlobalStore = create<GlobalState>((set, get) => ({
   toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
   toggleSound: () => set((state) => ({ soundEnabled: !state.soundEnabled })),
   addXP: (amount: number) => set((state) => ({ userXP: state.userXP + amount })),
+  setXP: (val: number) => set({ userXP: val }),
+  setStreakDays: (val: number) => set({ streakDays: val }),
   
   launchApp: (slug: string) => {
     set((state) => ({

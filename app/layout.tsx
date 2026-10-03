@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { NavigationShell } from '@/components/NavigationShell';
-import { DockBar } from '@/components/DockBar';
+import { AuthGuard } from '@/components/AuthGuard';
 
 export const metadata: Metadata = {
   title: 'Doodle Land | 40-App Unified Master Dashboard',
@@ -16,9 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col bg-cream text-ink antialiased selection:bg-bubblegum selection:text-white">
-        <NavigationShell />
-        <main className="flex-1 pb-24">{children}</main>
-        <DockBar />
+        <AuthGuard>{children}</AuthGuard>
       </body>
     </html>
   );

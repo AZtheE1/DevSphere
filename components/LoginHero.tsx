@@ -1,12 +1,57 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useGlobalStore } from '@/store/useGlobalStore';
+import { auth } from '@/lib/firebase';
+import { 
+  signInWithEmailAndPassword, 
+  createUserWithEmailAndPassword, 
+  signInWithPopup, 
+  GoogleAuthProvider 
+} from 'firebase/auth';
 
 export const LoginHero: React.FC = () => {
   const { setIsAuthenticated } = useGlobalStore();
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleAuth = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !password) return setError('Email and password required!');
+    
+    setLoading(true);
+    setError('');
+    try {
+      if (isSignUp) {
+        await createUserWithEmailAndPassword(auth, email, password);
+      } else {
+        await signInWithEmailAndPassword(auth, email, password);
+      }
+      // AuthGuard handles redirect via global state
+    } catch (err: any) {
+      setError(err.message || 'Failed to authenticate');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogleAuth = async () => {
+    setLoading(true);
+    setError('');
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+    } catch (err: any) {
+      setError(err.message || 'Failed to authenticate with Google');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -384,20 +429,18 @@ export const LoginHero: React.FC = () => {
 
               
               <div className="relative bg-cream p-1.5 rounded-full border-cartoon shadow-sticker-sm mb-6 flex">
-                
-                <div id="tab-pill" className="absolute top-1.5 left-1.5 w-[calc(50%-6px)] h-[calc(100%-12px)] bg-sunny border-2 border-ink rounded-full transition-all duration-300 shadow-sticker-sm"></div>
-                <button  id="tab-login" className="relative z-10 w-1/2 py-2 text-sm font-fredoka font-black text-ink text-center transition-colors">
+                <div id="tab-pill" className={`absolute top-1.5 left-1.5 w-[calc(50%-6px)] h-[calc(100%-12px)] bg-sunny border-2 border-ink rounded-full transition-all duration-300 shadow-sticker-sm ${isSignUp ? 'translate-x-full' : ''}`}></div>
+                <button type="button" onClick={() => setIsSignUp(false)} className={`relative z-10 w-1/2 py-2 text-sm font-fredoka font-black text-center transition-colors ${!isSignUp ? 'text-ink' : 'text-ink/60'}`}>
                   Log In
                 </button>
-                <button  id="tab-signup" className="relative z-10 w-1/2 py-2 text-sm font-fredoka font-black text-ink/60 text-center transition-colors">
+                <button type="button" onClick={() => setIsSignUp(true)} className={`relative z-10 w-1/2 py-2 text-sm font-fredoka font-black text-center transition-colors ${isSignUp ? 'text-ink' : 'text-ink/60'}`}>
                   Sign Up ✨
                 </button>
               </div>
 
-              <form id="auth-form" onSubmit={(e) => { e.preventDefault(); setIsAuthenticated(true); }} className="space-y-4">
+              <form id="auth-form" onSubmit={handleAuth} className="space-y-4">
                 
-                
-                <div id="field-name-group" className="hidden transition-all duration-300">
+                <div id="field-name-group" className={`${isSignUp ? 'block' : 'hidden'} transition-all duration-300`}>
                   <label className="block text-xs font-fredoka font-black uppercase tracking-wider text-ink mb-1.5">
                     Your Hacker Alias
                   </label>
@@ -405,34 +448,30 @@ export const LoginHero: React.FC = () => {
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg">👾</span>
                     <input 
                       type="text" 
-                      id="input-name"
                       placeholder="e.g. Ada Lovelace" 
                       className="w-full pl-12 pr-4 py-3 bg-[#FBF9FF] border-cartoon rounded-2xl font-nunito font-bold text-ink placeholder:text-ink/40 focus:outline-none focus:bg-white focus:shadow-sticker-sm transition-all"
                      />
                   </div>
                 </div>
 
-                
                 <div>
                   <div className="flex items-center justify-between mb-1.5">
                     <label className="block text-xs font-fredoka font-black uppercase tracking-wider text-ink">
                       Developer Email
                     </label>
-                    <span id="email-valid-badge" className="hidden text-[10px] font-mono font-bold text-mint bg-green-100 border border-ink px-2 py-0.5 rounded-full">Valid Email ✔</span>
                   </div>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg">📧</span>
                     <input 
                       type="email" 
-                      id="input-email"
-                      value="alex.coder@devsphere.io"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="you@domain.com" 
-                      
-                      
                       className="w-full pl-12 pr-4 py-3 bg-[#FBF9FF] border-cartoon rounded-2xl font-nunito font-bold text-ink placeholder:text-ink/40 focus:outline-none focus:bg-white focus:shadow-sticker-sm transition-all"
                       required
                      />
                   </div>
+
                 </div>
 
                 
@@ -449,20 +488,15 @@ export const LoginHero: React.FC = () => {
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg">🔑</span>
                     <input 
                       type="password" 
-                      id="input-password"
-                      value="SuperSecret123"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       placeholder="••••••••••••" 
-                      
-                      
-                      
                       className="w-full pl-12 pr-12 py-3 bg-[#FBF9FF] border-cartoon rounded-2xl font-nunito font-bold text-ink placeholder:text-ink/40 focus:outline-none focus:bg-white focus:shadow-sticker-sm transition-all"
                       required
                      />
                     
                     <button 
                       type="button" 
-                      id="btn-eye"
-                       
                       className="absolute right-3.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-xl bg-cream border-2 border-ink flex items-center justify-center text-sm hover:scale-105 active:scale-95 transition-transform"
                       title="Peek Password"
                     >
@@ -491,7 +525,7 @@ export const LoginHero: React.FC = () => {
                 <div className="flex items-center justify-between pt-1">
                   <label className="flex items-center gap-2.5 cursor-pointer select-none">
                     <div className="relative">
-                      <input type="checkbox" id="check-remember" checked className="sr-only peer" />
+                      <input type="checkbox" id="check-remember" defaultChecked className="sr-only peer" />
                       <div className="w-10 h-6 bg-gray-200 border-2 border-ink rounded-full peer peer-checked:bg-mint transition-colors"></div>
                       <div className="dot absolute left-1 top-1 w-4 h-4 bg-white border border-ink rounded-full transition-transform peer-checked:translate-x-4 shadow-[1px_1px_0px_#1B1B3A]"></div>
                     </div>
@@ -501,24 +535,27 @@ export const LoginHero: React.FC = () => {
                 </div>
 
                 
-                <div id="error-banner" className="hidden bg-red-100 border-2 border-red-500 rounded-2xl p-3 flex items-center gap-3 anim-shake">
+                <div id="error-banner" className={`${error ? 'flex' : 'hidden'} bg-red-100 border-2 border-red-500 rounded-2xl p-3 items-center gap-3 anim-shake`}>
                   <span className="text-2xl">🚨</span>
                   <div className="text-xs font-fredoka font-bold text-red-700">
                     <div>Oops, Houston, we have a typo!</div>
-                    <span className="font-nunito font-semibold text-red-600">Incorrect password sequence for this developer galaxy.</span>
+                    <span className="font-nunito font-semibold text-red-600">{error}</span>
                   </div>
                 </div>
 
-                
                 <button 
                   type="submit" 
-                  id="btn-submit"
-                  className="btn-tactile w-full py-4 px-6 rounded-full bg-gradient-to-r from-bubblegum via-sunny to-mint border-cartoon-thick shadow-sticker font-fredoka font-black text-lg text-ink flex items-center justify-center gap-3 transition-transform hover:-translate-y-1 active:translate-y-1 cursor-pointer"
+                  disabled={loading}
+                  className="btn-tactile w-full py-4 px-6 rounded-full bg-gradient-to-r from-bubblegum via-sunny to-mint border-cartoon-thick shadow-sticker font-fredoka font-black text-lg text-ink flex items-center justify-center gap-3 transition-transform hover:-translate-y-1 active:translate-y-1 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <span id="btn-submit-icon" className="text-2xl">🚀</span>
-                  <span id="btn-submit-text">Launch Me In!</span>
-                  
-                  <div id="btn-submit-spinner" className="hidden w-6 h-6 border-4 border-ink border-t-white rounded-full anim-spin-fast"></div>
+                  {loading ? (
+                    <div className="w-6 h-6 border-4 border-ink border-t-transparent rounded-full animate-spin"></div>
+                  ) : (
+                    <>
+                      <span className="text-2xl">🚀</span>
+                      <span>{isSignUp ? 'Create Developer Profile' : 'Launch Me In!'}</span>
+                    </>
+                  )}
                 </button>
 
               </form>
@@ -533,25 +570,24 @@ export const LoginHero: React.FC = () => {
 
               
               <div className="grid grid-cols-3 gap-3">
-                <button  className="btn-tactile py-2.5 px-3 bg-cream border-cartoon rounded-2xl shadow-sticker-sm flex items-center justify-center gap-2 hover:bg-white transition-all text-xs font-fredoka font-bold text-ink">
+                <button type="button" onClick={handleGoogleAuth} disabled={loading} className="btn-tactile py-2.5 px-3 bg-cream border-cartoon rounded-2xl shadow-sticker-sm flex items-center justify-center gap-2 hover:bg-white transition-all text-xs font-fredoka font-bold text-ink disabled:opacity-70">
                   <svg className="w-4 h-4" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.9C6.2 7.3 8.8 5 12 5z"/><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.7-.2-2.3H12v4.6h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.9z"/><path fill="#FBBC05" d="M5.3 14.7c-.2-.7-.4-1.5-.4-2.7s.1-2 .4-2.7L1.6 6.4C.6 8.4 0 10.6 0 13s.6 4.6 1.6 6.6l3.7-4.9z"/><path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.2 0-5.8-2.3-6.7-5.3L1.6 15.9C3.5 19.8 7.4 23 12 23z"/></svg>
                   <span>Google</span>
                 </button>
-                <button  className="btn-tactile py-2.5 px-3 bg-cream border-cartoon rounded-2xl shadow-sticker-sm flex items-center justify-center gap-2 hover:bg-white transition-all text-xs font-fredoka font-bold text-ink">
+                <button type="button" className="btn-tactile py-2.5 px-3 bg-cream border-cartoon rounded-2xl shadow-sticker-sm flex items-center justify-center gap-2 hover:bg-white transition-all text-xs font-fredoka font-bold text-ink">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
                   <span>GitHub</span>
                 </button>
-                <button  className="btn-tactile py-2.5 px-3 bg-cream border-cartoon rounded-2xl shadow-sticker-sm flex items-center justify-center gap-2 hover:bg-white transition-all text-xs font-fredoka font-bold text-ink">
+                <button type="button" className="btn-tactile py-2.5 px-3 bg-cream border-cartoon rounded-2xl shadow-sticker-sm flex items-center justify-center gap-2 hover:bg-white transition-all text-xs font-fredoka font-bold text-ink">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.85-.92.04-2.02.62-2.67 1.37-.58.66-1.08 1.74-.95 2.76 1.02.08 2.08-.53 2.7-1.28"/></svg>
                   <span>Apple</span>
                 </button>
               </div>
 
               
-              <button  className="btn-tactile w-full mt-3 py-2.5 rounded-2xl border-2 border-dashed border-ink/40 hover:border-ink bg-cream/50 hover:bg-cream font-fredoka font-bold text-xs text-ink/80 flex items-center justify-center gap-2 transition-all">
+              <button type="button" onClick={() => setIsAuthenticated(true)} className="btn-tactile w-full mt-3 py-2.5 rounded-2xl border-2 border-dashed border-ink/40 hover:border-ink bg-cream/50 hover:bg-cream font-fredoka font-bold text-xs text-ink/80 flex items-center justify-center gap-2 transition-all">
                 <span>🎒 Continue as Sandbox Guest (No Save)</span>
               </button>
-
               
               <div className="mt-6 pt-4 border-t-2 border-ink/10 flex flex-wrap items-center justify-between text-[11px] font-nunito font-extrabold text-ink/60">
                 <div className="flex items-center gap-3">
