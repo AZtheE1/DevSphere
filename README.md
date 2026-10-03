@@ -1,4 +1,9 @@
-# DevSphere
+# DevSphere (Doodle Land Micro-Apps Suite)
+
+[![Design System: Google Stitch](https://img.shields.io/badge/Design_System-Google_Stitch-FFD93D?style=for-the-badge&logo=google&logoColor=1E1B4B)](./DESIGN.md)
+[📄 Read the Full Design Specifications (DESIGN.md)](./DESIGN.md)
+
+![Doodle Land App Preview](https://lh3.googleusercontent.com/aida/AEtjO1XlCzxJ7SxElAzBcMTw3b9VVk5P0AVV431TdzCSNVcotFf2fvORIBMFcsf_9z982a7_GOq0Tv24EO-GUarBPe2JCX8JxzOEIN3C6huMTYAqNNquyOUBT6NerxSqZGt1Rirmzkm9VBaLpkX-Lt3Sb2Ph31467gWaAV2jfwTIsryJaoYrIkd1l-B2qoB96YqFKRQlK0rwXU97rs4s3MrA5rSbCQywt-BTpP5h-JuwgQzG0vSR83HLfUwuuBo)
 
 A unified interactive platform housing 40 fully functional web applications, built for learning and practice.
 
