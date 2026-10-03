@@ -107,7 +107,8 @@ export default function HomeDashboard() {
           <div className="w-12 h-12 rounded-full border-[3px] border-ink shadow-neo-sm overflow-hidden bg-white">
             <Image src="/logo.svg" alt="Google Stitch Mascot" width={48} height={48} />
           </div>
-          <span className="font-heading font-black text-xl text-ink">DevSphere Hub</span>
+          <span className="font-heading font-black text-xl text-ink hidden sm:inline">DevSphere : Doodle Land Micro-Apps Suite</span>
+          <span className="font-heading font-black text-xl text-ink sm:hidden">DevSphere</span>
         </div>
         <button 
           onClick={() => setIsAuthenticated(false)} 

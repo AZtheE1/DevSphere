@@ -17,7 +17,7 @@ export const APPS_CATALOG: AppMetadata[] = [
   {
     id: 'app-1',
     slug: 'calculator',
-    title: 'Robo-Calc Toy',
+    title: 'DoodleCalc',
     category: 'Utilities',
     description: 'Neon sci-fi toy calculator with tape history, Anime.js ripples & audio synthesis.',
     icon: 'Calculator',
@@ -29,7 +29,7 @@ export const APPS_CATALOG: AppMetadata[] = [
   {
     id: 'app-2',
     slug: 'quiz',
-    title: 'Wheel of Wonder',
+    title: 'QuizCraft',
     category: 'Games',
     description: '3D Category spin wheel with Three.js, live countdown, confetti & high scores.',
     icon: 'HelpCircle',
@@ -41,7 +41,7 @@ export const APPS_CATALOG: AppMetadata[] = [
   {
     id: 'app-3',
     slug: 'rock-paper-scissors',
-    title: 'Paw Brawl 2P',
+    title: 'DoodleRPS',
     category: 'Games',
     description: 'Neo-Brutalist 1P vs CPU & 2P Same-Screen arena with clash battle FX.',
     icon: 'Swords',
@@ -53,7 +53,7 @@ export const APPS_CATALOG: AppMetadata[] = [
   {
     id: 'app-4',
     slug: 'notes',
-    title: 'Corkboard & Notes',
+    title: 'DoodleNotes',
     category: 'Productivity',
     description: 'Sticky notes & Markdown dual-pane editor with AI auto-tagger & Framer transitions.',
     icon: 'FileText',
@@ -65,7 +65,7 @@ export const APPS_CATALOG: AppMetadata[] = [
   {
     id: 'app-5',
     slug: 'stopwatch',
-    title: 'Speedway Chrono',
+    title: 'ChronoDoodle',
     category: 'Utilities',
     description: 'Cyberpunk neon ring timer & lap analytics chart with GSAP timeline physics.',
     icon: 'Timer',
@@ -77,7 +77,7 @@ export const APPS_CATALOG: AppMetadata[] = [
   {
     id: 'app-6',
     slug: 'qr-reader',
-    title: 'Detective QR Studio',
+    title: 'ScanDoodle',
     category: 'Utilities',
     description: 'Camera scanner simulation + custom logo sticker QR generator with peeling preview.',
     icon: 'QrCode',
@@ -89,7 +89,7 @@ export const APPS_CATALOG: AppMetadata[] = [
   {
     id: 'app-7',
     slug: 'weather',
-    title: 'Doodle Weather',
+    title: 'SkyDoodle',
     category: 'Lifestyle',
     description: 'Sunny, Stormy & Sleepy Night live particle weather simulation with interactive charts.',
     icon: 'CloudSun',
@@ -101,7 +101,7 @@ export const APPS_CATALOG: AppMetadata[] = [
   {
     id: 'app-8',
     slug: 'ecommerce',
-    title: 'Toy Emporium',
+    title: 'DoodleShop',
     category: 'Commerce',
     description: 'Bento shop grid, 3D product view, flying cart drawer & 4-step checkout journey.',
     icon: 'ShoppingBag',
@@ -113,7 +113,7 @@ export const APPS_CATALOG: AppMetadata[] = [
   {
     id: 'app-9',
     slug: 'landing-page',
-    title: 'Boopl Platform',
+    title: 'Doodle SaaS',
     category: 'Productivity',
     description: 'Playful illustrated work platform with 3D hero mascot, pricing slider & ScrollTrigger.',
     icon: 'Sparkles',
@@ -125,7 +125,7 @@ export const APPS_CATALOG: AppMetadata[] = [
   {
     id: 'app-10',
     slug: 'password-generator',
-    title: 'Potion Lab Vault',
+    title: 'PassDoodle',
     category: 'Utilities',
     description: 'Wizard password concocter with slot machine scramble & crack time calculation.',
     icon: 'KeyRound',

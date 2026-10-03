@@ -13,7 +13,17 @@ import Image from 'next/image';
 
 export const AuthGuard = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
-  const { isAuthenticated, setIsAuthenticated, setXP, setStreakDays } = useGlobalStore();
+  const { isAuthenticated, setIsAuthenticated, setXP, setStreakDays, darkMode } = useGlobalStore();
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add('dark-mode');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
