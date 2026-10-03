@@ -112,7 +112,7 @@ export default function HomeDashboard() {
         </div>
         <button 
           onClick={() => setIsAuthenticated(false)} 
-          className="px-4 py-2 rounded-xl bg-bubblegum border-[2.5px] border-ink shadow-neo-sm font-heading font-bold text-ink hover:translate-y-[-2px] transition-transform"
+          className="px-4 py-2 min-h-[48px] rounded-xl bg-bubblegum border-[2.5px] border-ink shadow-neo-sm font-heading font-bold text-ink hover:translate-y-[-2px] transition-transform"
         >
           Logout
         </button>
@@ -139,16 +139,16 @@ export default function HomeDashboard() {
             <Link
               href="/apps/calculator"
               onClick={() => launchApp('calculator')}
-              className="px-6 py-3.5 rounded-2xl bg-ink text-white border-[3px] border-ink font-heading font-black text-sm shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex items-center gap-2"
+              className="px-6 py-3.5 min-h-[48px] rounded-2xl bg-ink text-white border-[3px] border-ink font-heading font-black text-sm shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex items-center gap-2"
             >
-              <Play className="w-4 h-4 fill-white" />
+              <Play className="w-5 h-5 fill-white" />
               <span>Launch App 01 (Robo-Calc)</span>
             </Link>
 
             <Link
               href="/apps/quiz"
               onClick={() => launchApp('quiz')}
-              className="px-6 py-3.5 rounded-2xl bg-white text-ink border-[3px] border-ink font-heading font-black text-sm shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all"
+              className="px-6 py-3.5 min-h-[48px] rounded-2xl bg-white text-ink border-[3px] border-ink font-heading font-black text-sm shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all"
             >
               🎡 Play 3D Quiz Wheel
             </Link>
@@ -197,7 +197,7 @@ export default function HomeDashboard() {
                 setSelectedCategory(cat);
                 playSound('click');
               }}
-              className={`px-4 py-2 rounded-full border-[2.5px] border-ink font-heading font-bold text-xs transition-all shadow-neo-sm ${
+              className={`px-4 py-2 min-h-[48px] min-w-[48px] rounded-full border-[2.5px] border-ink font-heading font-bold text-xs transition-all shadow-neo-sm flex-shrink-0 ${
                 selectedCategory === cat
                   ? 'bg-sunny text-ink scale-105'
                   : 'bg-white text-gray-700 hover:bg-cream'
@@ -266,8 +266,8 @@ export default function HomeDashboard() {
               <span className="text-[11px] font-mono-code font-bold text-gray-500">
                 {app.techBadge}
               </span>
-              <div className="w-8 h-8 rounded-xl bg-cream border-[2px] border-ink flex items-center justify-center text-ink group-hover:bg-sunny transition-colors">
-                <ArrowRight className="w-4 h-4" />
+              <div className="w-12 h-12 rounded-xl bg-cream border-[2px] border-ink flex items-center justify-center text-ink group-hover:bg-sunny transition-colors">
+                <ArrowRight className="w-6 h-6" />
               </div>
             </div>
           </Link>
@@ -295,7 +295,7 @@ export default function HomeDashboard() {
             playSound('win');
             addXP(100);
           }}
-          className="px-6 py-3.5 rounded-2xl bg-sunny border-[3px] border-ink font-heading font-black text-sm text-ink shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all whitespace-nowrap"
+          className="px-6 py-3.5 min-h-[48px] rounded-2xl bg-sunny border-[3px] border-ink font-heading font-black text-sm text-ink shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all whitespace-nowrap"
         >
           Claim +100 Milestone XP ⭐
         </button>

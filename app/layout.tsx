@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-cream text-ink dark:bg-darkbg dark:text-surface antialiased selection:bg-bubblegum selection:text-white transition-colors duration-300">
+      <body className="min-h-screen flex flex-col bg-cream text-ink dark:bg-darkbg dark:text-surface antialiased selection:bg-bubblegum selection:text-white transition-colors duration-300 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
         <AuthGuard>{children}</AuthGuard>
       </body>
     </html>

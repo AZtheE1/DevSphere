@@ -11,7 +11,7 @@ export const DockBar: React.FC = () => {
   const { playSound, launchApp } = useGlobalStore();
 
   return (
-    <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-40">
+    <div className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 z-40 w-[95%] max-w-fit">
       <div className="flex items-center gap-1.5 p-2 bg-white/90 backdrop-blur-md rounded-full border-[3.5px] border-ink shadow-neo-lg">
         {/* Home Button */}
         <Link
@@ -19,7 +19,7 @@ export const DockBar: React.FC = () => {
           onClick={() => {
             playSound('pop');
           }}
-          className={`relative p-2.5 rounded-full border-[2.5px] border-ink transition-all duration-200 group ${
+          className={`relative p-3 min-w-[48px] min-h-[48px] flex items-center justify-center rounded-full border-[2.5px] border-ink transition-all duration-200 group ${
             pathname === '/' ? 'bg-sunny scale-110 shadow-neo-sm' : 'bg-cream hover:bg-sunny/50 hover:scale-105'
           }`}
           title="Town Hub Home"
@@ -43,7 +43,7 @@ export const DockBar: React.FC = () => {
                 onClick={() => {
                   launchApp(app.slug);
                 }}
-                className={`relative p-2 rounded-2xl border-[2.5px] border-ink transition-all duration-200 group flex-shrink-0 ${
+                className={`relative p-2 min-w-[48px] min-h-[48px] flex items-center justify-center rounded-2xl border-[2.5px] border-ink transition-all duration-200 group flex-shrink-0 ${
                   isActive ? 'scale-115 shadow-neo-sm ring-2 ring-ink' : 'hover:scale-110 hover:-translate-y-1'
                 }`}
                 style={{ backgroundColor: app.bgColor }}
