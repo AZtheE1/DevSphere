@@ -2,12 +2,22 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "../../apps/**/*.{js,ts,jsx,tsx,mdx}",
-    "../../packages/ui/**/*.{js,ts,jsx,tsx,mdx}"
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
     extend: {
       colors: {
+        cream: "#FFF8E7",
+        ink: "#1E1B4B",
+        sunny: "#FFD93D",
+        bubblegum: "#FF6B9D",
+        sky: "#4CC9F0",
+        mint: "#6BE585",
+        grape: "#9B5DE5",
+        tangerine: "#FF9F1C",
+        darkbg: "#1A1838",
         surface: '#fcf8ff',
         'surface-dim': '#dad6ff',
         'surface-bright': '#fcf8ff',
@@ -61,15 +71,17 @@ const config: Config = {
         nunito: ['"Nunito Sans"', 'sans-serif']
       },
       boxShadow: {
-        'neo-sm': '3px 3px 0px #1E1B4B',
-        'neo-md': '4px 4px 0px #1E1B4B',
-        'neo-lg': '6px 6px 0px #1E1B4B',
+        neo: "4px 4px 0px #1E1B4B",
+        "neo-sm": "2.5px 2.5px 0px #1E1B4B",
+        "neo-lg": "6px 6px 0px #1E1B4B",
+        "neo-xl": "8px 8px 0px #1E1B4B",
+        "neo-pop": "0 0 0 3.5px #1E1B4B, 5px 5px 0 #1E1B4B",
       },
       borderRadius: {
         'xl': '2rem',
         'pill': '9999px',
       }
-    },
+    }
   },
   plugins: [],
 };
