@@ -69,7 +69,7 @@ export const AppClientWrapper: React.FC<Props> = ({ slug }) => {
         <Link
           href="/"
           onClick={() => playSound('pop')}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white border-[2.5px] border-[#1E1B4B] font-heading font-black text-xs text-[#1E1B4B] shadow-neo-sm hover:translate-y-[-1px] active:translate-y-[1px] transition-all"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white border-[2.5px] border-ink font-heading font-black text-xs text-ink shadow-neo-sm hover:translate-y-[-1px] active:translate-y-[1px] transition-all"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Town Hub</span>
@@ -77,7 +77,7 @@ export const AppClientWrapper: React.FC<Props> = ({ slug }) => {
 
         <div className="flex items-center gap-2">
           <span className="text-xs font-bold text-gray-500 hidden sm:inline">Engine:</span>
-          <span className="px-3 py-1 rounded-full bg-[#FFF8E7] border-[2px] border-[#1E1B4B] font-mono-code font-bold text-[11px] text-[#1E1B4B]">
+          <span className="px-3 py-1 rounded-full bg-cream border-[2px] border-ink font-mono-code font-bold text-[11px] text-ink">
             {appMeta.techBadge}
           </span>
         </div>

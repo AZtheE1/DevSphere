@@ -143,6 +143,8 @@ interface GlobalState {
   streakDays: number;
   recentApps: string[];
   activeModal: string | null;
+  isAuthenticated: boolean;
+  setIsAuthenticated: (val: boolean) => void;
   toggleDarkMode: () => void;
   toggleSound: () => void;
   addXP: (amount: number) => void;
@@ -159,6 +161,9 @@ export const useGlobalStore = create<GlobalState>((set, get) => ({
   streakDays: 7,
   recentApps: ['calculator', 'quiz', 'weather'],
   activeModal: null,
+  isAuthenticated: false,
+
+  setIsAuthenticated: (val: boolean) => set({ isAuthenticated: val }),
 
   toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
   toggleSound: () => set((state) => ({ soundEnabled: !state.soundEnabled })),

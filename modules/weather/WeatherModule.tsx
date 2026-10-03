@@ -105,8 +105,8 @@ export const WeatherModule: React.FC = () => {
         bg: '#FFD93D',
         temp: 24,
         condition: 'Bright & Cheerful Sunny Day',
-        icon: <Sun className="w-16 h-16 text-[#1E1B4B] animate-spin" style={{ animationDuration: '20s' }} />,
-        cardBg: 'bg-[#FFF8E7]',
+        icon: <Sun className="w-16 h-16 text-ink animate-spin" style={{ animationDuration: '20s' }} />,
+        cardBg: 'bg-cream',
       };
     }
     if (weather === 'rainy') {
@@ -114,7 +114,7 @@ export const WeatherModule: React.FC = () => {
         bg: '#4CC9F0',
         temp: 16,
         condition: 'Playful Puddle Rainy Storm',
-        icon: <CloudRain className="w-16 h-16 text-[#1E1B4B] animate-bounce" />,
+        icon: <CloudRain className="w-16 h-16 text-ink animate-bounce" />,
         cardBg: 'bg-[#E3DFFF]',
       };
     }
@@ -122,7 +122,7 @@ export const WeatherModule: React.FC = () => {
       bg: '#1A1838',
       temp: 12,
       condition: 'Sleepy Moonlit Night',
-      icon: <Moon className="w-16 h-16 text-[#FFD93D]" />,
+      icon: <Moon className="w-16 h-16 text-sunny" />,
       cardBg: 'bg-[#2D2A5B]',
     };
   };
@@ -133,12 +133,12 @@ export const WeatherModule: React.FC = () => {
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Header Banner */}
       <div
-        className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 p-6 rounded-3xl border-[4px] border-[#1E1B4B] shadow-neo-lg transition-colors"
+        className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 p-6 rounded-3xl border-[4px] border-ink shadow-neo-lg transition-colors"
         style={{ backgroundColor: currentTheme.bg, color: weather === 'night' ? 'white' : '#1E1B4B' }}
       >
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#1E1B4B] font-bold text-xs border-[2px] border-[#1E1B4B] mb-2 shadow-neo-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF6B9D]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-ink font-bold text-xs border-[2px] border-ink mb-2 shadow-neo-sm">
+            <Sparkles className="w-3.5 h-3.5 text-bubblegum" />
             App 07 • Stitch UI Model
           </div>
           <h1 className="text-3xl font-heading font-black">Doodle Weather Horizon</h1>
@@ -148,11 +148,11 @@ export const WeatherModule: React.FC = () => {
         </div>
 
         {/* Condition Picker */}
-        <div className="flex items-center gap-2 bg-white/20 p-1.5 rounded-2xl border-[3px] border-[#1E1B4B]">
+        <div className="flex items-center gap-2 bg-white/20 p-1.5 rounded-2xl border-[3px] border-ink">
           <button
             onClick={() => switchWeather('sunny')}
             className={`p-2 rounded-xl font-heading font-bold text-xs transition-all ${
-              weather === 'sunny' ? 'bg-[#FFD93D] text-[#1E1B4B] border-[2px] border-[#1E1B4B] shadow-neo-sm' : 'text-current'
+              weather === 'sunny' ? 'bg-sunny text-ink border-[2px] border-ink shadow-neo-sm' : 'text-current'
             }`}
             title="Sunny Day"
           >
@@ -161,7 +161,7 @@ export const WeatherModule: React.FC = () => {
           <button
             onClick={() => switchWeather('rainy')}
             className={`p-2 rounded-xl font-heading font-bold text-xs transition-all ${
-              weather === 'rainy' ? 'bg-[#4CC9F0] text-[#1E1B4B] border-[2px] border-[#1E1B4B] shadow-neo-sm' : 'text-current'
+              weather === 'rainy' ? 'bg-sky text-ink border-[2px] border-ink shadow-neo-sm' : 'text-current'
             }`}
             title="Rainy Storm"
           >
@@ -170,7 +170,7 @@ export const WeatherModule: React.FC = () => {
           <button
             onClick={() => switchWeather('night')}
             className={`p-2 rounded-xl font-heading font-bold text-xs transition-all ${
-              weather === 'night' ? 'bg-[#9B5DE5] text-white border-[2px] border-[#1E1B4B] shadow-neo-sm' : 'text-current'
+              weather === 'night' ? 'bg-grape text-white border-[2px] border-ink shadow-neo-sm' : 'text-current'
             }`}
             title="Sleepy Night"
           >
@@ -182,12 +182,12 @@ export const WeatherModule: React.FC = () => {
       {/* Main Weather Hero Card */}
       <div
         ref={cardRef}
-        className={`p-8 rounded-[36px] border-[4.5px] border-[#1E1B4B] shadow-neo-xl mb-8 transition-colors ${currentTheme.cardBg} ${
-          weather === 'night' ? 'text-white' : 'text-[#1E1B4B]'
+        className={`p-8 rounded-[36px] border-[4.5px] border-ink shadow-neo-xl mb-8 transition-colors ${currentTheme.cardBg} ${
+          weather === 'night' ? 'text-white' : 'text-ink'
         }`}
       >
         {/* Canvas Particle Overlay */}
-        <div className="relative rounded-3xl overflow-hidden mb-6 border-[3px] border-[#1E1B4B] bg-white/40 backdrop-blur-sm">
+        <div className="relative rounded-3xl overflow-hidden mb-6 border-[3px] border-ink bg-white/40 backdrop-blur-sm">
           <canvas ref={canvasRef} className="w-full h-44 block" />
           <div className="absolute inset-0 flex items-center justify-between px-8 pointer-events-none">
             <div>
@@ -205,34 +205,34 @@ export const WeatherModule: React.FC = () => {
 
         {/* Environmental Telemetry Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="p-4 rounded-2xl bg-white border-[3px] border-[#1E1B4B] text-[#1E1B4B] shadow-neo-sm">
+          <div className="p-4 rounded-2xl bg-white border-[3px] border-ink text-ink shadow-neo-sm">
             <span className="text-xs font-bold text-gray-500 flex items-center gap-1">
-              <Wind className="w-3.5 h-3.5 text-[#4CC9F0]" /> Wind Speed
+              <Wind className="w-3.5 h-3.5 text-sky" /> Wind Speed
             </span>
             <span className="text-xl font-heading font-black mt-1 block">14 km/h</span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white border-[3px] border-[#1E1B4B] text-[#1E1B4B] shadow-neo-sm">
+          <div className="p-4 rounded-2xl bg-white border-[3px] border-ink text-ink shadow-neo-sm">
             <span className="text-xs font-bold text-gray-500 flex items-center gap-1">
-              <Droplets className="w-3.5 h-3.5 text-[#4CC9F0]" /> Humidity
+              <Droplets className="w-3.5 h-3.5 text-sky" /> Humidity
             </span>
             <span className="text-xl font-heading font-black mt-1 block">
               {weather === 'rainy' ? '88%' : '45%'}
             </span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white border-[3px] border-[#1E1B4B] text-[#1E1B4B] shadow-neo-sm">
+          <div className="p-4 rounded-2xl bg-white border-[3px] border-ink text-ink shadow-neo-sm">
             <span className="text-xs font-bold text-gray-500 flex items-center gap-1">
-              <Sun className="w-3.5 h-3.5 text-[#FF9F1C]" /> UV Index
+              <Sun className="w-3.5 h-3.5 text-tangerine" /> UV Index
             </span>
             <span className="text-xl font-heading font-black mt-1 block">
               {weather === 'sunny' ? '6 (Mod)' : '1 (Low)'}
             </span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white border-[3px] border-[#1E1B4B] text-[#1E1B4B] shadow-neo-sm">
+          <div className="p-4 rounded-2xl bg-white border-[3px] border-ink text-ink shadow-neo-sm">
             <span className="text-xs font-bold text-gray-500 flex items-center gap-1">
-              <Compass className="w-3.5 h-3.5 text-[#9B5DE5]" /> Pressure
+              <Compass className="w-3.5 h-3.5 text-grape" /> Pressure
             </span>
             <span className="text-xl font-heading font-black mt-1 block">1013 hPa</span>
           </div>

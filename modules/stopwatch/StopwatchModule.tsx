@@ -89,27 +89,27 @@ export const StopwatchModule: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-[#FF9F1C] text-[#1E1B4B] p-6 rounded-3xl border-[4px] border-[#1E1B4B] shadow-neo-lg">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-tangerine text-ink p-6 rounded-3xl border-[4px] border-ink shadow-neo-lg">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white font-bold text-xs border-[2px] border-[#1E1B4B] mb-2 shadow-neo-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF6B9D]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white font-bold text-xs border-[2px] border-ink mb-2 shadow-neo-sm">
+            <Sparkles className="w-3.5 h-3.5 text-bubblegum" />
             App 05 • Stitch UI Model
           </div>
           <h1 className="text-3xl font-heading font-black">Speedway Stopwatch Track</h1>
-          <p className="text-sm font-semibold text-[#1E1B4B]/80 mt-1">
+          <p className="text-sm font-semibold text-ink/80 mt-1">
             GSAP-driven Cyberpunk neon dial, lap performance graph & melting timer.
           </p>
         </div>
 
         {/* Mode Switcher */}
-        <div className="flex items-center gap-2 bg-white/30 p-1.5 rounded-2xl border-[3px] border-[#1E1B4B]">
+        <div className="flex items-center gap-2 bg-white/30 p-1.5 rounded-2xl border-[3px] border-ink">
           <button
             onClick={() => {
               setMode('stopwatch');
               handleReset();
             }}
             className={`px-3 py-1.5 rounded-xl font-heading font-bold text-xs transition-all ${
-              mode === 'stopwatch' ? 'bg-[#FFD93D] text-[#1E1B4B] border-[2px] border-[#1E1B4B] shadow-neo-sm' : 'text-[#1E1B4B]'
+              mode === 'stopwatch' ? 'bg-sunny text-ink border-[2px] border-ink shadow-neo-sm' : 'text-ink'
             }`}
           >
             ⏱️ Stopwatch
@@ -120,7 +120,7 @@ export const StopwatchModule: React.FC = () => {
               handleReset();
             }}
             className={`px-3 py-1.5 rounded-xl font-heading font-bold text-xs transition-all ${
-              mode === 'timer' ? 'bg-[#FFD93D] text-[#1E1B4B] border-[2px] border-[#1E1B4B] shadow-neo-sm' : 'text-[#1E1B4B]'
+              mode === 'timer' ? 'bg-sunny text-ink border-[2px] border-ink shadow-neo-sm' : 'text-ink'
             }`}
           >
             ⏳ Melting Timer
@@ -130,7 +130,7 @@ export const StopwatchModule: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Main Dial & Controls */}
-        <div className="lg:col-span-7 bg-white p-8 rounded-[32px] border-[4.5px] border-[#1E1B4B] shadow-neo-xl flex flex-col items-center">
+        <div className="lg:col-span-7 bg-white p-8 rounded-[32px] border-[4.5px] border-ink shadow-neo-xl flex flex-col items-center">
           {/* Neon Ring Circular Tracker */}
           <div className="relative w-64 h-64 mb-8 flex items-center justify-center">
             <svg className="w-full h-full -rotate-90">
@@ -158,10 +158,10 @@ export const StopwatchModule: React.FC = () => {
 
             {/* Centered Digital Display */}
             <div className="absolute flex flex-col items-center">
-              <div className="font-mono-code font-black text-4xl text-[#1E1B4B] tracking-tight">
+              <div className="font-mono-code font-black text-4xl text-ink tracking-tight">
                 {t.min}:{t.sec}
               </div>
-              <div className="font-mono-code font-bold text-xl text-[#FF6B9D] mt-0.5">
+              <div className="font-mono-code font-bold text-xl text-bubblegum mt-0.5">
                 .{t.ms}
               </div>
               <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">
@@ -174,8 +174,8 @@ export const StopwatchModule: React.FC = () => {
           <div className="flex items-center gap-4 w-full justify-center">
             <button
               onClick={handleStartPause}
-              className={`px-8 py-4 rounded-2xl border-[3.5px] border-[#1E1B4B] font-heading font-black text-lg shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex items-center gap-2 ${
-                isRunning ? 'bg-[#FF6B9D] text-white' : 'bg-[#6BE585] text-[#1E1B4B]'
+              className={`px-8 py-4 rounded-2xl border-[3.5px] border-ink font-heading font-black text-lg shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex items-center gap-2 ${
+                isRunning ? 'bg-bubblegum text-white' : 'bg-mint text-ink'
               }`}
             >
               {isRunning ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
@@ -185,7 +185,7 @@ export const StopwatchModule: React.FC = () => {
             <button
               onClick={handleLap}
               disabled={!isRunning}
-              className="p-4 rounded-2xl bg-[#4CC9F0] text-[#1E1B4B] border-[3.5px] border-[#1E1B4B] shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all disabled:opacity-40"
+              className="p-4 rounded-2xl bg-sky text-ink border-[3.5px] border-ink shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all disabled:opacity-40"
               title="Record Lap"
             >
               <Flag className="w-5 h-5" />
@@ -193,7 +193,7 @@ export const StopwatchModule: React.FC = () => {
 
             <button
               onClick={handleReset}
-              className="p-4 rounded-2xl bg-[#FFF8E7] text-[#1E1B4B] border-[3.5px] border-[#1E1B4B] shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all"
+              className="p-4 rounded-2xl bg-cream text-ink border-[3.5px] border-ink shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all"
               title="Reset Timer"
             >
               <RotateCcw className="w-5 h-5" />
@@ -202,10 +202,10 @@ export const StopwatchModule: React.FC = () => {
         </div>
 
         {/* Lap Analytics & Graph Drawer */}
-        <div className="lg:col-span-5 bg-white p-6 rounded-[32px] border-[4px] border-[#1E1B4B] shadow-neo-lg">
-          <div className="flex items-center justify-between pb-3 border-b-[3px] border-[#1E1B4B] mb-4">
-            <h2 className="font-heading font-bold text-lg text-[#1E1B4B] flex items-center gap-2">
-              <BarChart2 className="w-5 h-5 text-[#FF9F1C]" />
+        <div className="lg:col-span-5 bg-white p-6 rounded-[32px] border-[4px] border-ink shadow-neo-lg">
+          <div className="flex items-center justify-between pb-3 border-b-[3px] border-ink mb-4">
+            <h2 className="font-heading font-bold text-lg text-ink flex items-center gap-2">
+              <BarChart2 className="w-5 h-5 text-tangerine" />
               Lap Telemetry
             </h2>
             <span className="text-xs font-bold text-gray-500">{laps.length} Laps</span>
@@ -213,14 +213,14 @@ export const StopwatchModule: React.FC = () => {
 
           {/* Mini Lap Bar Graph */}
           {laps.length > 0 && (
-            <div ref={graphRef} className="h-28 bg-[#FFF8E7] p-3 rounded-2xl border-[2.5px] border-[#1E1B4B] flex items-end gap-1.5 mb-4 overflow-hidden">
+            <div ref={graphRef} className="h-28 bg-cream p-3 rounded-2xl border-[2.5px] border-ink flex items-end gap-1.5 mb-4 overflow-hidden">
               {laps.slice(0, 10).map((lap, idx) => {
                 const max = Math.max(...laps);
                 const heightPct = Math.max((lap / max) * 100, 15);
                 return (
                   <div
                     key={idx}
-                    className="flex-1 rounded-t-lg border-t-2 border-x-2 border-[#1E1B4B] bg-[#FFD93D]"
+                    className="flex-1 rounded-t-lg border-t-2 border-x-2 border-ink bg-sunny"
                     style={{ height: `${heightPct}%` }}
                     title={`Lap ${laps.length - idx}: ${(lap / 1000).toFixed(2)}s`}
                   />
@@ -241,10 +241,10 @@ export const StopwatchModule: React.FC = () => {
                 return (
                   <div
                     key={idx}
-                    className="p-3 rounded-xl bg-[#FFF8E7] border-[2px] border-[#1E1B4B] flex items-center justify-between font-mono-code text-xs"
+                    className="p-3 rounded-xl bg-cream border-[2px] border-ink flex items-center justify-between font-mono-code text-xs"
                   >
-                    <span className="font-bold text-[#1E1B4B]">Lap {laps.length - idx}</span>
-                    <span className="font-black text-[#FF6B9D]">
+                    <span className="font-bold text-ink">Lap {laps.length - idx}</span>
+                    <span className="font-black text-bubblegum">
                       {formatted.min}:{formatted.sec}.{formatted.ms}
                     </span>
                   </div>

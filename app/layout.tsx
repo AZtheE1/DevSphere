@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-[#FFF8E7] text-[#1E1B4B] antialiased selection:bg-[#FF6B9D] selection:text-white">
+      <body className="min-h-screen flex flex-col bg-cream text-ink antialiased selection:bg-bubblegum selection:text-white">
         <NavigationShell />
         <main className="flex-1 pb-24">{children}</main>
         <DockBar />

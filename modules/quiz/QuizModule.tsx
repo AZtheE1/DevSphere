@@ -215,42 +215,42 @@ export const QuizModule: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-[#4CC9F0] p-6 rounded-3xl border-[4px] border-[#1E1B4B] shadow-neo-lg">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-sky p-6 rounded-3xl border-[4px] border-ink shadow-neo-lg">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#1E1B4B] font-bold text-xs border-[2px] border-[#1E1B4B] mb-2 shadow-neo-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#FFD93D]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-ink font-bold text-xs border-[2px] border-ink mb-2 shadow-neo-sm">
+            <Sparkles className="w-3.5 h-3.5 text-sunny" />
             App 02 • Stitch UI Model
           </div>
-          <h1 className="text-3xl font-heading font-black text-[#1E1B4B]">Wheel of Wonder Quiz Arena</h1>
-          <p className="text-sm font-semibold text-[#1E1B4B]/80 mt-1">
+          <h1 className="text-3xl font-heading font-black text-ink">Wheel of Wonder Quiz Arena</h1>
+          <p className="text-sm font-semibold text-ink/80 mt-1">
             3D spinning category wheel, particle celebration bursts & trivia challenge.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="px-4 py-2 rounded-2xl bg-white border-[3px] border-[#1E1B4B] shadow-neo-sm">
+          <div className="px-4 py-2 rounded-2xl bg-white border-[3px] border-ink shadow-neo-sm">
             <span className="text-xs font-bold text-gray-500 block">Current Score</span>
-            <span className="text-xl font-heading font-black text-[#1E1B4B]">{score} pts</span>
+            <span className="text-xl font-heading font-black text-ink">{score} pts</span>
           </div>
         </div>
       </div>
 
       {/* Stage 1: Spin The 3D Wheel */}
       {gameState === 'spin' && (
-        <div className="bg-white p-8 rounded-[32px] border-[4px] border-[#1E1B4B] shadow-neo-xl text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-[#FFD93D] border-[2.5px] border-[#1E1B4B] font-heading font-black text-sm text-[#1E1B4B] mb-4">
+        <div className="bg-white p-8 rounded-[32px] border-[4px] border-ink shadow-neo-xl text-center">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-sunny border-[2.5px] border-ink font-heading font-black text-sm text-ink mb-4">
             Question {currentIndex + 1} of {QUESTIONS.length}
           </div>
-          <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#1E1B4B] mb-2">
+          <h2 className="text-2xl sm:text-3xl font-heading font-black text-ink mb-2">
             Spin the 3D Wheel of Wonder!
           </h2>
           <p className="text-sm font-semibold text-gray-600 mb-6">
             Land on a lucky category to unlock your next trivia prompt.
           </p>
 
-          <div className="relative w-full max-w-sm h-64 mx-auto mb-8 bg-[#FFF8E7] rounded-3xl border-[3.5px] border-[#1E1B4B] overflow-hidden flex items-center justify-center">
+          <div className="relative w-full max-w-sm h-64 mx-auto mb-8 bg-cream rounded-3xl border-[3.5px] border-ink overflow-hidden flex items-center justify-center">
             <canvas ref={canvasRef} className="w-full h-full" />
-            <div className="absolute top-2 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-[#FF6B9D] text-white text-xs font-bold border-[2px] border-[#1E1B4B]">
+            <div className="absolute top-2 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-bubblegum text-white text-xs font-bold border-[2px] border-ink">
               Selected: {selectedCategory}
             </div>
           </div>
@@ -258,7 +258,7 @@ export const QuizModule: React.FC = () => {
           <button
             onClick={spinWheel}
             disabled={isSpinning}
-            className="px-8 py-4 rounded-2xl bg-[#FFD93D] border-[3.5px] border-[#1E1B4B] font-heading font-black text-xl text-[#1E1B4B] shadow-neo hover:translate-y-[-2px] active:translate-y-[3px] active:shadow-none transition-all inline-flex items-center gap-3 disabled:opacity-60"
+            className="px-8 py-4 rounded-2xl bg-sunny border-[3.5px] border-ink font-heading font-black text-xl text-ink shadow-neo hover:translate-y-[-2px] active:translate-y-[3px] active:shadow-none transition-all inline-flex items-center gap-3 disabled:opacity-60"
           >
             <RotateCw className={`w-6 h-6 ${isSpinning ? 'animate-spin' : ''}`} />
             {isSpinning ? 'Spinning Wheel...' : 'Spin Category Wheel!'}
@@ -268,19 +268,19 @@ export const QuizModule: React.FC = () => {
 
       {/* Stage 2: Question Stage */}
       {gameState === 'question' && (
-        <div className="bg-white p-8 rounded-[32px] border-[4px] border-[#1E1B4B] shadow-neo-xl">
+        <div className="bg-white p-8 rounded-[32px] border-[4px] border-ink shadow-neo-xl">
           <div className="flex items-center justify-between mb-6">
-            <span className="px-3.5 py-1.5 rounded-full bg-[#4CC9F0] border-[2px] border-[#1E1B4B] font-heading font-bold text-xs text-[#1E1B4B]">
+            <span className="px-3.5 py-1.5 rounded-full bg-sky border-[2px] border-ink font-heading font-bold text-xs text-ink">
               Category: {QUESTIONS[currentIndex].category}
             </span>
-            <div className={`px-4 py-1.5 rounded-full border-[2px] border-[#1E1B4B] font-mono-code font-black text-sm ${
-              timeLeft <= 5 ? 'bg-[#FF6B9D] text-white animate-pulse' : 'bg-[#FFF8E7] text-[#1E1B4B]'
+            <div className={`px-4 py-1.5 rounded-full border-[2px] border-ink font-mono-code font-black text-sm ${
+              timeLeft <= 5 ? 'bg-bubblegum text-white animate-pulse' : 'bg-cream text-ink'
             }`}>
               ⏱️ {timeLeft}s remaining
             </div>
           </div>
 
-          <h2 className="text-xl sm:text-2xl font-heading font-bold text-[#1E1B4B] mb-8 leading-snug">
+          <h2 className="text-xl sm:text-2xl font-heading font-bold text-ink mb-8 leading-snug">
             {QUESTIONS[currentIndex].question}
           </h2>
 
@@ -288,13 +288,13 @@ export const QuizModule: React.FC = () => {
             {QUESTIONS[currentIndex].options.map((option, idx) => {
               const isSelected = selectedAnswer === idx;
               const isCorrectAnswer = idx === QUESTIONS[currentIndex].correct;
-              let btnClass = 'bg-[#FFF8E7] text-[#1E1B4B] hover:bg-[#FFD93D]/30';
+              let btnClass = 'bg-cream text-ink hover:bg-sunny/30';
 
               if (isAnswered) {
                 if (isCorrectAnswer) {
-                  btnClass = 'bg-[#6BE585] text-[#1E1B4B] ring-2 ring-emerald-500';
+                  btnClass = 'bg-mint text-ink ring-2 ring-emerald-500';
                 } else if (isSelected) {
-                  btnClass = 'bg-[#FF6B9D] text-white';
+                  btnClass = 'bg-bubblegum text-white';
                 }
               }
 
@@ -303,10 +303,10 @@ export const QuizModule: React.FC = () => {
                   key={idx}
                   onClick={() => handleSelectAnswer(idx)}
                   disabled={isAnswered}
-                  className={`p-5 rounded-2xl border-[3px] border-[#1E1B4B] font-heading font-bold text-base text-left shadow-neo-sm transition-all flex items-center justify-between ${btnClass}`}
+                  className={`p-5 rounded-2xl border-[3px] border-ink font-heading font-bold text-base text-left shadow-neo-sm transition-all flex items-center justify-between ${btnClass}`}
                 >
                   <span>{option}</span>
-                  {isAnswered && isCorrectAnswer && <CheckCircle2 className="w-5 h-5 text-[#1E1B4B]" />}
+                  {isAnswered && isCorrectAnswer && <CheckCircle2 className="w-5 h-5 text-ink" />}
                   {isAnswered && isSelected && !isCorrectAnswer && <XCircle className="w-5 h-5 text-white" />}
                 </button>
               );
@@ -317,7 +317,7 @@ export const QuizModule: React.FC = () => {
             <div className="flex justify-end">
               <button
                 onClick={handleNextQuestion}
-                className="px-6 py-3 rounded-2xl bg-[#6BE585] border-[3px] border-[#1E1B4B] font-heading font-black text-sm text-[#1E1B4B] shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex items-center gap-2"
+                className="px-6 py-3 rounded-2xl bg-mint border-[3px] border-ink font-heading font-black text-sm text-ink shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex items-center gap-2"
               >
                 <span>Continue</span>
                 <ArrowRight className="w-4 h-4" />
@@ -329,25 +329,25 @@ export const QuizModule: React.FC = () => {
 
       {/* Stage 3: Grand Carnival Finale */}
       {gameState === 'result' && (
-        <div className="bg-[#FFF8E7] p-8 rounded-[32px] border-[4px] border-[#1E1B4B] shadow-neo-xl text-center">
-          <div className="w-20 h-20 mx-auto rounded-3xl bg-[#FFD93D] border-[3.5px] border-[#1E1B4B] shadow-neo flex items-center justify-center mb-6">
-            <Trophy className="w-10 h-10 text-[#1E1B4B]" />
+        <div className="bg-cream p-8 rounded-[32px] border-[4px] border-ink shadow-neo-xl text-center">
+          <div className="w-20 h-20 mx-auto rounded-3xl bg-sunny border-[3.5px] border-ink shadow-neo flex items-center justify-center mb-6">
+            <Trophy className="w-10 h-10 text-ink" />
           </div>
-          <h2 className="text-3xl font-heading font-black text-[#1E1B4B] mb-2">Grand Carnival Finale!</h2>
+          <h2 className="text-3xl font-heading font-black text-ink mb-2">Grand Carnival Finale!</h2>
           <p className="text-base font-semibold text-gray-700 mb-6">
             You completed all questions in the Wonder Arena!
           </p>
 
-          <div className="inline-block p-6 rounded-3xl bg-white border-[3.5px] border-[#1E1B4B] shadow-neo-md mb-8">
+          <div className="inline-block p-6 rounded-3xl bg-white border-[3.5px] border-ink shadow-neo-md mb-8">
             <span className="text-xs font-bold text-gray-500 block uppercase tracking-wider">Final Score</span>
-            <span className="text-5xl font-heading font-black text-[#FF6B9D]">{score}</span>
+            <span className="text-5xl font-heading font-black text-bubblegum">{score}</span>
             <span className="text-sm font-bold text-gray-600 block mt-1">+150 XP Earned</span>
           </div>
 
           <div>
             <button
               onClick={restartQuiz}
-              className="px-8 py-3.5 rounded-2xl bg-[#FFD93D] border-[3.5px] border-[#1E1B4B] font-heading font-black text-base text-[#1E1B4B] shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all"
+              className="px-8 py-3.5 rounded-2xl bg-sunny border-[3.5px] border-ink font-heading font-black text-base text-ink shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all"
             >
               Play Again!
             </button>

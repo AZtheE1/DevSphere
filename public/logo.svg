@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <defs>
+    <filter id="sticker-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="3" dy="4" stdDeviation="0" flood-color="#1E1B4B" />
+    </filter>
+  </defs>
+  <!-- Mascot Face Badge -->
+  <g transform="translate(10, 5)">
+    <!-- Shadow offset backing -->
+    <circle cx="28" cy="30" r="26" fill="#1E1B4B" />
+    <!-- Main head -->
+    <circle cx="26" cy="27" r="25" fill="#FFD93D" stroke="#1E1B4B" stroke-width="4" />
+    <!-- Cheeks -->
+    <circle cx="12" cy="31" r="5" fill="#FF6B9D" />
+    <circle cx="40" cy="31" r="5" fill="#FF6B9D" />
+    <!-- Eyes with shine -->
+    <circle cx="19" cy="24" r="4.5" fill="#1E1B4B" />
+    <circle cx="20" cy="22" r="1.5" fill="#FFFFFF" />
+    <circle cx="33" cy="24" r="4.5" fill="#1E1B4B" />
+    <circle cx="34" cy="22" r="1.5" fill="#FFFFFF" />
+    <!-- Happy open smile -->
+    <path d="M 21 31 Q 26 38 31 31" fill="#FF6B9D" stroke="#1E1B4B" stroke-width="3" stroke-linecap="round" />
+    <!-- Sparkle star top-right -->
+    <path d="M 45 6 L 47 11 L 52 13 L 47 15 L 45 20 L 43 15 L 38 13 L 43 11 Z" fill="#6BE585" stroke="#1E1B4B" stroke-width="2" />
+  </g>
+  <!-- Wordmark "Doodle Land" -->
+  <g transform="translate(68, 8)">
+    <!-- Text Shadow -->
+    <text x="3" y="32" font-family="'Fredoka', 'Comfortaa', cursive, sans-serif" font-weight="900" font-size="28" fill="#1E1B4B" letter-spacing="1">Doodle</text>
+    <text x="0" y="30" font-family="'Fredoka', 'Comfortaa', cursive, sans-serif" font-weight="900" font-size="28" fill="#FF6B9D" stroke="#1E1B4B" stroke-width="4" stroke-linejoin="round" paint-order="stroke fill" letter-spacing="1">Doodle</text>
+    
+    <text x="3" y="53" font-family="'Fredoka', 'Comfortaa', cursive, sans-serif" font-weight="900" font-size="20" fill="#1E1B4B" letter-spacing="3">LAND</text>
+    <text x="0" y="51" font-family="'Fredoka', 'Comfortaa', cursive, sans-serif" font-weight="900" font-size="20" fill="#4CC9F0" stroke="#1E1B4B" stroke-width="3.5" stroke-linejoin="round" paint-order="stroke fill" letter-spacing="3">LAND</text>
+
+    <!-- Star sticker decorative badge -->
+    <rect x="94" y="34" width="46" height="18" rx="9" fill="#FFD93D" stroke="#1E1B4B" stroke-width="2.5" />
+    <text x="117" y="47" font-family="'Fredoka', sans-serif" font-weight="700" font-size="10" fill="#1E1B4B" text-anchor="middle">★ FUN</text>
+  </g>
+</svg>

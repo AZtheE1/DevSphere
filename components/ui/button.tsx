@@ -26,9 +26,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           boxShadow: "4px 4px 0px #1E1B4B",
         }}
         className={cn(
-          "relative inline-flex items-center justify-center font-comfortaa font-bold rounded-pill border-[3.5px] border-[#1E1B4B] transition-colors focus:outline-none",
+          "relative inline-flex items-center justify-center font-comfortaa font-bold rounded-pill border-[3.5px] border-ink transition-colors focus:outline-none",
           {
-            "bg-primary-container text-[#1E1B4B]": variant === "primary",
+            "bg-primary-container text-ink": variant === "primary",
             "bg-secondary-container text-white": variant === "secondary",
             "bg-tertiary-container text-white": variant === "tertiary",
             "px-4 py-2 text-sm": size === "sm",

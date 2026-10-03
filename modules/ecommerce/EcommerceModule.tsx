@@ -132,14 +132,14 @@ export const EcommerceModule: React.FC = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-[#FFD93D] p-6 rounded-3xl border-[4px] border-[#1E1B4B] shadow-neo-lg">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-sunny p-6 rounded-3xl border-[4px] border-ink shadow-neo-lg">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#1E1B4B] font-bold text-xs border-[2px] border-[#1E1B4B] mb-2 shadow-neo-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF6B9D]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-ink font-bold text-xs border-[2px] border-ink mb-2 shadow-neo-sm">
+            <Sparkles className="w-3.5 h-3.5 text-bubblegum" />
             App 08 • Stitch UI Model
           </div>
-          <h1 className="text-3xl font-heading font-black text-[#1E1B4B]">Toy Aisle Emporium</h1>
-          <p className="text-sm font-semibold text-[#1E1B4B]/80 mt-1">
+          <h1 className="text-3xl font-heading font-black text-ink">Toy Aisle Emporium</h1>
+          <p className="text-sm font-semibold text-ink/80 mt-1">
             Tactile Bento toy storefront, flying cart drawer & 4-step checkout journey.
           </p>
         </div>
@@ -151,12 +151,12 @@ export const EcommerceModule: React.FC = () => {
             setIsCartOpen(true);
             playSound('pop');
           }}
-          className="px-5 py-3 rounded-2xl bg-white border-[3px] border-[#1E1B4B] font-heading font-black text-sm text-[#1E1B4B] shadow-neo hover:translate-y-[-1px] active:translate-y-[2px] transition-all flex items-center gap-2 relative"
+          className="px-5 py-3 rounded-2xl bg-white border-[3px] border-ink font-heading font-black text-sm text-ink shadow-neo hover:translate-y-[-1px] active:translate-y-[2px] transition-all flex items-center gap-2 relative"
         >
-          <ShoppingBag className="w-5 h-5 text-[#FF6B9D]" />
+          <ShoppingBag className="w-5 h-5 text-bubblegum" />
           <span>Cart ({cart.reduce((s, i) => s + i.quantity, 0)})</span>
           {cart.length > 0 && (
-            <span className="absolute -top-2 -right-2 px-2 py-0.5 rounded-full bg-[#FF6B9D] text-white text-xs font-bold border-2 border-[#1E1B4B]">
+            <span className="absolute -top-2 -right-2 px-2 py-0.5 rounded-full bg-bubblegum text-white text-xs font-bold border-2 border-ink">
               ${totalAmount}
             </span>
           )}
@@ -168,32 +168,32 @@ export const EcommerceModule: React.FC = () => {
         {PRODUCTS.map((prod) => (
           <div
             key={prod.id}
-            className="p-6 rounded-[32px] border-[4px] border-[#1E1B4B] shadow-neo bg-white hover:translate-y-[-4px] transition-all flex flex-col justify-between"
+            className="p-6 rounded-[32px] border-[4px] border-ink shadow-neo bg-white hover:translate-y-[-4px] transition-all flex flex-col justify-between"
           >
             <div>
               {/* Top Tag & Price */}
               <div className="flex items-center justify-between mb-4">
-                <span className="px-3 py-1 rounded-full bg-[#FFF8E7] border-[2px] border-[#1E1B4B] text-[11px] font-bold text-[#1E1B4B]">
+                <span className="px-3 py-1 rounded-full bg-cream border-[2px] border-ink text-[11px] font-bold text-ink">
                   {prod.tag}
                 </span>
-                <span className="text-xl font-heading font-black text-[#1E1B4B]">${prod.price}</span>
+                <span className="text-xl font-heading font-black text-ink">${prod.price}</span>
               </div>
 
               {/* Toy Icon Display */}
               <div
-                className="w-full h-36 rounded-2xl border-[3px] border-[#1E1B4B] flex items-center justify-center text-6xl mb-4 shadow-neo-sm"
+                className="w-full h-36 rounded-2xl border-[3px] border-ink flex items-center justify-center text-6xl mb-4 shadow-neo-sm"
                 style={{ backgroundColor: prod.color }}
               >
                 {prod.emoji}
               </div>
 
-              <h3 className="font-heading font-black text-xl text-[#1E1B4B] mb-1">{prod.name}</h3>
+              <h3 className="font-heading font-black text-xl text-ink mb-1">{prod.name}</h3>
               <p className="text-xs font-semibold text-gray-600 mb-6">{prod.desc}</p>
             </div>
 
             <button
               onClick={() => addToCart(prod)}
-              className="w-full py-3 rounded-2xl bg-[#FFD93D] border-[3px] border-[#1E1B4B] font-heading font-black text-sm text-[#1E1B4B] shadow-neo-sm hover:bg-[#ffe173] active:translate-y-[2px] transition-all flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-2xl bg-sunny border-[3px] border-ink font-heading font-black text-sm text-ink shadow-neo-sm hover:bg-[#ffe173] active:translate-y-[2px] transition-all flex items-center justify-center gap-2"
             >
               <Plus className="w-4 h-4" /> Add to Basket
             </button>
@@ -204,10 +204,10 @@ export const EcommerceModule: React.FC = () => {
       {/* Cart & 4-Stop Checkout Modal Drawer */}
       {isCartOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
-          <div className="bg-white max-w-xl w-full p-8 rounded-[36px] border-[5px] border-[#1E1B4B] shadow-neo-xl max-h-[90vh] overflow-y-auto">
+          <div className="bg-white max-w-xl w-full p-8 rounded-[36px] border-[5px] border-ink shadow-neo-xl max-h-[90vh] overflow-y-auto">
             {/* Top Bar with Step Indicators */}
-            <div className="flex items-center justify-between pb-4 border-b-[3px] border-[#1E1B4B] mb-6">
-              <h2 className="font-heading font-black text-2xl text-[#1E1B4B]">
+            <div className="flex items-center justify-between pb-4 border-b-[3px] border-ink mb-6">
+              <h2 className="font-heading font-black text-2xl text-ink">
                 {checkoutStep === 1 && 'Shopping Basket'}
                 {checkoutStep === 2 && 'Shipping Coordinates'}
                 {checkoutStep === 3 && 'Toy Token Payment'}
@@ -219,7 +219,7 @@ export const EcommerceModule: React.FC = () => {
                   setCheckoutStep(1);
                   playSound('click');
                 }}
-                className="w-8 h-8 rounded-full bg-[#FF6B9D] text-white border-[2px] border-[#1E1B4B] font-bold text-sm flex items-center justify-center"
+                className="w-8 h-8 rounded-full bg-bubblegum text-white border-[2px] border-ink font-bold text-sm flex items-center justify-center"
               >
                 ✕
               </button>
@@ -237,12 +237,12 @@ export const EcommerceModule: React.FC = () => {
                     {cart.map((item) => (
                       <div
                         key={item.id}
-                        className="p-4 rounded-2xl bg-[#FFF8E7] border-[2.5px] border-[#1E1B4B] flex items-center justify-between"
+                        className="p-4 rounded-2xl bg-cream border-[2.5px] border-ink flex items-center justify-between"
                       >
                         <div className="flex items-center gap-3">
                           <span className="text-3xl">{item.emoji}</span>
                           <div>
-                            <h4 className="font-heading font-bold text-sm text-[#1E1B4B]">{item.name}</h4>
+                            <h4 className="font-heading font-bold text-sm text-ink">{item.name}</h4>
                             <span className="text-xs font-bold text-gray-500">${item.price} each</span>
                           </div>
                         </div>
@@ -250,14 +250,14 @@ export const EcommerceModule: React.FC = () => {
                         <div className="flex items-center gap-2">
                           <button
                             onClick={() => updateQuantity(item.id, -1)}
-                            className="p-1 rounded-lg bg-white border-[2px] border-[#1E1B4B]"
+                            className="p-1 rounded-lg bg-white border-[2px] border-ink"
                           >
                             <Minus className="w-3.5 h-3.5" />
                           </button>
                           <span className="font-mono-code font-bold text-sm px-1.5">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.id, 1)}
-                            className="p-1 rounded-lg bg-white border-[2px] border-[#1E1B4B]"
+                            className="p-1 rounded-lg bg-white border-[2px] border-ink"
                           >
                             <Plus className="w-3.5 h-3.5" />
                           </button>
@@ -265,14 +265,14 @@ export const EcommerceModule: React.FC = () => {
                       </div>
                     ))}
 
-                    <div className="p-4 rounded-2xl bg-[#FFD93D] border-[3px] border-[#1E1B4B] flex items-center justify-between font-heading font-black text-lg">
+                    <div className="p-4 rounded-2xl bg-sunny border-[3px] border-ink flex items-center justify-between font-heading font-black text-lg">
                       <span>Total Amount:</span>
                       <span>${totalAmount}</span>
                     </div>
 
                     <button
                       onClick={() => setCheckoutStep(2)}
-                      className="w-full py-4 rounded-2xl bg-[#6BE585] text-[#1E1B4B] border-[3.5px] border-[#1E1B4B] font-heading font-black text-base shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex items-center justify-center gap-2 mt-4"
+                      className="w-full py-4 rounded-2xl bg-mint text-ink border-[3.5px] border-ink font-heading font-black text-base shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex items-center justify-center gap-2 mt-4"
                     >
                       <span>Proceed to Shipping</span>
                       <ArrowRight className="w-4 h-4" />
@@ -290,7 +290,7 @@ export const EcommerceModule: React.FC = () => {
                   <input
                     type="text"
                     defaultValue="Alex Adventurer"
-                    className="w-full p-3 rounded-xl bg-[#FFF8E7] border-[2.5px] border-[#1E1B4B] font-semibold text-sm outline-none"
+                    className="w-full p-3 rounded-xl bg-cream border-[2.5px] border-ink font-semibold text-sm outline-none"
                   />
                 </div>
                 <div>
@@ -298,12 +298,12 @@ export const EcommerceModule: React.FC = () => {
                   <input
                     type="text"
                     defaultValue="77 Balloon Street, Toy Town, Doodle Valley"
-                    className="w-full p-3 rounded-xl bg-[#FFF8E7] border-[2.5px] border-[#1E1B4B] font-semibold text-sm outline-none"
+                    className="w-full p-3 rounded-xl bg-cream border-[2.5px] border-ink font-semibold text-sm outline-none"
                   />
                 </div>
                 <button
                   onClick={() => setCheckoutStep(3)}
-                  className="w-full py-3.5 rounded-2xl bg-[#4CC9F0] text-[#1E1B4B] border-[3.5px] border-[#1E1B4B] font-heading font-black text-base shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3.5 rounded-2xl bg-sky text-ink border-[3.5px] border-ink font-heading font-black text-base shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex items-center justify-center gap-2"
                 >
                   <CreditCard className="w-4 h-4" /> Next: Payment Method
                 </button>
@@ -313,16 +313,16 @@ export const EcommerceModule: React.FC = () => {
             {/* Step 3: Payment */}
             {checkoutStep === 3 && (
               <div className="space-y-4 text-center">
-                <div className="p-5 rounded-2xl bg-[#FFF8E7] border-[3px] border-[#1E1B4B]">
+                <div className="p-5 rounded-2xl bg-cream border-[3px] border-ink">
                   <span className="text-3xl block mb-2">💳</span>
-                  <span className="font-heading font-bold text-base block text-[#1E1B4B]">
+                  <span className="font-heading font-bold text-base block text-ink">
                     Toy Token Instant Express Card
                   </span>
                   <span className="text-xs text-gray-500 font-mono-code block mt-1">**** **** **** 2026</span>
                 </div>
                 <button
                   onClick={completeCheckout}
-                  className="w-full py-4 rounded-2xl bg-[#FF6B9D] text-white border-[3.5px] border-[#1E1B4B] font-heading font-black text-lg shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all"
+                  className="w-full py-4 rounded-2xl bg-bubblegum text-white border-[3.5px] border-ink font-heading font-black text-lg shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all"
                 >
                   Confirm & Pay ${totalAmount}
                 </button>
@@ -332,10 +332,10 @@ export const EcommerceModule: React.FC = () => {
             {/* Step 4: Order Dispatched */}
             {checkoutStep === 4 && (
               <div className="text-center py-6">
-                <div className="w-16 h-16 rounded-full bg-[#6BE585] border-[3px] border-[#1E1B4B] shadow-neo-sm flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle2 className="w-8 h-8 text-[#1E1B4B]" />
+                <div className="w-16 h-16 rounded-full bg-mint border-[3px] border-ink shadow-neo-sm flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle2 className="w-8 h-8 text-ink" />
                 </div>
-                <h3 className="font-heading font-black text-2xl text-[#1E1B4B] mb-2">Order Confirmed!</h3>
+                <h3 className="font-heading font-black text-2xl text-ink mb-2">Order Confirmed!</h3>
                 <p className="text-sm font-semibold text-gray-600 mb-6">
                   Your Doodle toy parcel is packed and on its way across the valley!
                 </p>
@@ -346,7 +346,7 @@ export const EcommerceModule: React.FC = () => {
                     setIsCartOpen(false);
                     playSound('pop');
                   }}
-                  className="px-8 py-3 rounded-2xl bg-[#FFD93D] border-[3px] border-[#1E1B4B] font-heading font-bold text-sm text-[#1E1B4B] shadow-neo-sm"
+                  className="px-8 py-3 rounded-2xl bg-sunny border-[3px] border-ink font-heading font-bold text-sm text-ink shadow-neo-sm"
                 >
                   Back to Emporium
                 </button>

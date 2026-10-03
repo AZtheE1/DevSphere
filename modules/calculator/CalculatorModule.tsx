@@ -126,14 +126,14 @@ export const CalculatorModule: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-[#FFD93D] p-6 rounded-3xl border-[4px] border-[#1E1B4B] shadow-neo-lg">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-sunny p-6 rounded-3xl border-[4px] border-ink shadow-neo-lg">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#1E1B4B] font-bold text-xs border-[2px] border-[#1E1B4B] mb-2 shadow-neo-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF6B9D]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-ink font-bold text-xs border-[2px] border-ink mb-2 shadow-neo-sm">
+            <Sparkles className="w-3.5 h-3.5 text-bubblegum" />
             App 01 • Stitch UI Model
           </div>
-          <h1 className="text-3xl font-heading font-black text-[#1E1B4B]">Robo-Calc Toy Gadget</h1>
-          <p className="text-sm font-semibold text-[#1E1B4B]/80 mt-1">
+          <h1 className="text-3xl font-heading font-black text-ink">Robo-Calc Toy Gadget</h1>
+          <p className="text-sm font-semibold text-ink/80 mt-1">
             Tactile Neo-Brutalist scientific toy calculator with tape history & audio engine.
           </p>
         </div>
@@ -142,7 +142,7 @@ export const CalculatorModule: React.FC = () => {
         <div className="flex items-center gap-2.5">
           <button
             onClick={() => setTheme(theme === 'toy' ? 'sci-fi' : 'toy')}
-            className="px-3.5 py-2 rounded-2xl bg-white border-[3px] border-[#1E1B4B] font-heading font-bold text-xs shadow-neo-sm hover:bg-[#FFF8E7] active:translate-y-1 transition-all"
+            className="px-3.5 py-2 rounded-2xl bg-white border-[3px] border-ink font-heading font-bold text-xs shadow-neo-sm hover:bg-cream active:translate-y-1 transition-all"
           >
             Skin: {theme === 'toy' ? '🎨 Toy Land' : '⚡ Neon Sci-Fi'}
           </button>
@@ -151,7 +151,7 @@ export const CalculatorModule: React.FC = () => {
               setShowHistory(!showHistory);
               playSound('click');
             }}
-            className="p-2.5 rounded-2xl bg-[#4CC9F0] border-[3px] border-[#1E1B4B] text-[#1E1B4B] shadow-neo-sm hover:bg-[#a3e5ff] active:translate-y-1 transition-all"
+            className="p-2.5 rounded-2xl bg-sky border-[3px] border-ink text-ink shadow-neo-sm hover:bg-[#a3e5ff] active:translate-y-1 transition-all"
             title="Toggle Tape History"
           >
             <History className="w-5 h-5" />
@@ -161,17 +161,17 @@ export const CalculatorModule: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Main Calculator Body */}
-        <div className={`lg:col-span-8 p-6 sm:p-8 rounded-[32px] border-[4.5px] border-[#1E1B4B] shadow-neo-xl transition-all ${
-          theme === 'toy' ? 'bg-[#FFF8E7]' : 'bg-[#1A1838] text-white'
+        <div className={`lg:col-span-8 p-6 sm:p-8 rounded-[32px] border-[4.5px] border-ink shadow-neo-xl transition-all ${
+          theme === 'toy' ? 'bg-cream' : 'bg-darkbg text-white'
         }`}>
           {/* Top Robot Screws & Antenna */}
           <div className="flex items-center justify-between mb-4 px-2">
             <div className="flex items-center gap-2">
-              <div className="w-3.5 h-3.5 rounded-full bg-[#FF6B9D] border-[2px] border-[#1E1B4B]" />
-              <div className="w-3.5 h-3.5 rounded-full bg-[#4CC9F0] border-[2px] border-[#1E1B4B]" />
-              <div className="w-3.5 h-3.5 rounded-full bg-[#6BE585] border-[2px] border-[#1E1B4B]" />
+              <div className="w-3.5 h-3.5 rounded-full bg-bubblegum border-[2px] border-ink" />
+              <div className="w-3.5 h-3.5 rounded-full bg-sky border-[2px] border-ink" />
+              <div className="w-3.5 h-3.5 rounded-full bg-mint border-[2px] border-ink" />
             </div>
-            <span className="text-[11px] font-mono-code font-bold tracking-widest px-3 py-1 rounded-full bg-black/10 border-[1.5px] border-[#1E1B4B]/30">
+            <span className="text-[11px] font-mono-code font-bold tracking-widest px-3 py-1 rounded-full bg-black/10 border-[1.5px] border-ink/30">
               ROBO-SYS 4.0
             </span>
           </div>
@@ -179,39 +179,39 @@ export const CalculatorModule: React.FC = () => {
           {/* LCD Screen */}
           <div
             ref={displayRef}
-            className="relative bg-white rounded-2xl p-5 border-[3.5px] border-[#1E1B4B] shadow-inner mb-6 text-right select-none overflow-hidden"
+            className="relative bg-white rounded-2xl p-5 border-[3.5px] border-ink shadow-inner mb-6 text-right select-none overflow-hidden"
           >
             <div className="text-xs font-mono font-bold text-gray-500 min-h-[1.25rem]">
               {equation || '\u00A0'}
             </div>
-            <div className="text-3xl sm:text-4xl font-mono-code font-black text-[#1E1B4B] truncate mt-1">
+            <div className="text-3xl sm:text-4xl font-mono-code font-black text-ink truncate mt-1">
               {display}
             </div>
 
             {/* Quick Copy Button */}
             <button
               onClick={copyResult}
-              className="absolute left-3 bottom-3 p-1.5 rounded-lg bg-[#FFF8E7] border-[2px] border-[#1E1B4B] hover:bg-[#FFD93D] transition-colors"
+              className="absolute left-3 bottom-3 p-1.5 rounded-lg bg-cream border-[2px] border-ink hover:bg-sunny transition-colors"
               title="Copy to clipboard"
             >
-              {copied ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5 text-[#1E1B4B]" />}
+              {copied ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5 text-ink" />}
             </button>
           </div>
 
           {/* Buttons Keypad */}
           <div ref={buttonsGridRef} className="grid grid-cols-4 gap-3">
             {buttons.map((btn, index) => {
-              let bg = 'bg-white text-[#1E1B4B]';
-              if (btn.type === 'primary') bg = 'bg-[#FFD93D] text-[#1E1B4B]';
-              if (btn.type === 'op') bg = 'bg-[#4CC9F0] text-[#1E1B4B]';
-              if (btn.type === 'danger') bg = 'bg-[#FF6B9D] text-white';
-              if (btn.type === 'warn') bg = 'bg-[#FF9F1C] text-white';
+              let bg = 'bg-white text-ink';
+              if (btn.type === 'primary') bg = 'bg-sunny text-ink';
+              if (btn.type === 'op') bg = 'bg-sky text-ink';
+              if (btn.type === 'danger') bg = 'bg-bubblegum text-white';
+              if (btn.type === 'warn') bg = 'bg-tangerine text-white';
 
               return (
                 <button
                   key={index}
                   onClick={(e) => handleButtonClick(btn.label, e)}
-                  className={`${bg} h-14 sm:h-16 rounded-2xl border-[3.5px] border-[#1E1B4B] font-heading font-black text-lg sm:text-xl shadow-neo hover:translate-y-[-2px] active:translate-y-[3px] active:shadow-none transition-all flex items-center justify-center`}
+                  className={`${bg} h-14 sm:h-16 rounded-2xl border-[3.5px] border-ink font-heading font-black text-lg sm:text-xl shadow-neo hover:translate-y-[-2px] active:translate-y-[3px] active:shadow-none transition-all flex items-center justify-center`}
                 >
                   {btn.label}
                 </button>
@@ -221,25 +221,25 @@ export const CalculatorModule: React.FC = () => {
         </div>
 
         {/* History Tape Drawer / Side Panel */}
-        <div className={`lg:col-span-4 bg-white p-6 rounded-[28px] border-[4px] border-[#1E1B4B] shadow-neo-lg transition-all ${
+        <div className={`lg:col-span-4 bg-white p-6 rounded-[28px] border-[4px] border-ink shadow-neo-lg transition-all ${
           showHistory ? 'block' : 'hidden lg:block'
         }`}>
-          <div className="flex items-center justify-between pb-3 border-b-[3px] border-[#1E1B4B] mb-4">
-            <h2 className="font-heading font-bold text-lg text-[#1E1B4B] flex items-center gap-2">
-              <History className="w-4 h-4 text-[#9B5DE5]" />
+          <div className="flex items-center justify-between pb-3 border-b-[3px] border-ink mb-4">
+            <h2 className="font-heading font-bold text-lg text-ink flex items-center gap-2">
+              <History className="w-4 h-4 text-grape" />
               Calculation Tape
             </h2>
             <div className="flex items-center gap-1.5">
               <button
                 onClick={exportHistory}
-                className="p-1.5 rounded-lg bg-[#6BE585] border-[2px] border-[#1E1B4B] hover:bg-[#86efac] transition-all"
+                className="p-1.5 rounded-lg bg-mint border-[2px] border-ink hover:bg-[#86efac] transition-all"
                 title="Download calculation tape"
               >
-                <Download className="w-3.5 h-3.5 text-[#1E1B4B]" />
+                <Download className="w-3.5 h-3.5 text-ink" />
               </button>
               <button
                 onClick={() => setHistory([])}
-                className="p-1.5 rounded-lg bg-[#FF6B9D] border-[2px] border-[#1E1B4B] hover:bg-[#f472b6] transition-all"
+                className="p-1.5 rounded-lg bg-bubblegum border-[2px] border-ink hover:bg-[#f472b6] transition-all"
                 title="Clear tape history"
               >
                 <Trash2 className="w-3.5 h-3.5 text-white" />
@@ -256,7 +256,7 @@ export const CalculatorModule: React.FC = () => {
               history.map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-3 rounded-xl bg-[#FFF8E7] border-[2px] border-[#1E1B4B] font-mono-code text-xs text-[#1E1B4B] flex items-center justify-between hover:bg-[#FFD93D]/30 transition-colors"
+                  className="p-3 rounded-xl bg-cream border-[2px] border-ink font-mono-code text-xs text-ink flex items-center justify-between hover:bg-sunny/30 transition-colors"
                 >
                   <span className="font-semibold">{item}</span>
                   <button
@@ -265,7 +265,7 @@ export const CalculatorModule: React.FC = () => {
                       if (res) setDisplay(res);
                       playSound('pop');
                     }}
-                    className="text-[10px] font-bold px-2 py-0.5 rounded bg-white border border-[#1E1B4B] hover:bg-[#FFD93D]"
+                    className="text-[10px] font-bold px-2 py-0.5 rounded bg-white border border-ink hover:bg-sunny"
                     title="Load result to screen"
                   >
                     Recall

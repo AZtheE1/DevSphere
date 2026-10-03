@@ -11,13 +11,13 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
       <span
         ref={ref}
         className={cn(
-          "inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-comfortaa font-bold text-xs border-[2.5px] border-[#1E1B4B]",
+          "inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-comfortaa font-bold text-xs border-[2.5px] border-ink",
           {
-            "bg-[#FFD93D] text-[#1E1B4B]": variant === "primary",
-            "bg-[#FF6B9D] text-white": variant === "secondary",
-            "bg-[#6BE585] text-[#1E1B4B]": variant === "mint",
-            "bg-[#4CC9F0] text-[#1E1B4B]": variant === "sky",
-            "bg-[#9B5DE5] text-white": variant === "grape",
+            "bg-sunny text-ink": variant === "primary",
+            "bg-bubblegum text-white": variant === "secondary",
+            "bg-mint text-ink": variant === "mint",
+            "bg-sky text-ink": variant === "sky",
+            "bg-grape text-white": variant === "grape",
           },
           className
         )}

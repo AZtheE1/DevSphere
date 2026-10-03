@@ -11,10 +11,10 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          "rounded-[28px] border-[3.5px] border-[#1E1B4B] p-6 shadow-neo transition-all",
+          "rounded-[28px] border-[3.5px] border-ink p-6 shadow-neo transition-all",
           {
             "bg-white": variant === "white",
-            "bg-[#FFF8E7]": variant === "cream",
+            "bg-cream": variant === "cream",
             "bg-[#FFFDF5]": variant === "tinted",
           },
           className

@@ -124,10 +124,10 @@ export const RpsModule: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-[#FF6B9D] text-white p-6 rounded-3xl border-[4px] border-[#1E1B4B] shadow-neo-lg">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-bubblegum text-white p-6 rounded-3xl border-[4px] border-ink shadow-neo-lg">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#1E1B4B] font-bold text-xs border-[2px] border-[#1E1B4B] mb-2 shadow-neo-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#FFD93D]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-ink font-bold text-xs border-[2px] border-ink mb-2 shadow-neo-sm">
+            <Sparkles className="w-3.5 h-3.5 text-sunny" />
             App 03 • Stitch UI Model
           </div>
           <h1 className="text-3xl font-heading font-black text-white">Paw Brawl - Battle Arena</h1>
@@ -137,14 +137,14 @@ export const RpsModule: React.FC = () => {
         </div>
 
         {/* Mode Selector */}
-        <div className="flex items-center gap-2 bg-white/20 p-1.5 rounded-2xl border-[3px] border-[#1E1B4B]">
+        <div className="flex items-center gap-2 bg-white/20 p-1.5 rounded-2xl border-[3px] border-ink">
           <button
             onClick={() => {
               setMode('1p');
               resetGame();
             }}
             className={`px-3 py-1.5 rounded-xl font-heading font-bold text-xs flex items-center gap-1.5 transition-all ${
-              mode === '1p' ? 'bg-[#FFD93D] text-[#1E1B4B] border-[2px] border-[#1E1B4B] shadow-neo-sm' : 'text-white'
+              mode === '1p' ? 'bg-sunny text-ink border-[2px] border-ink shadow-neo-sm' : 'text-white'
             }`}
           >
             <User className="w-3.5 h-3.5" /> 1P Solo
@@ -155,7 +155,7 @@ export const RpsModule: React.FC = () => {
               resetGame();
             }}
             className={`px-3 py-1.5 rounded-xl font-heading font-bold text-xs flex items-center gap-1.5 transition-all ${
-              mode === '2p' ? 'bg-[#FFD93D] text-[#1E1B4B] border-[2px] border-[#1E1B4B] shadow-neo-sm' : 'text-white'
+              mode === '2p' ? 'bg-sunny text-ink border-[2px] border-ink shadow-neo-sm' : 'text-white'
             }`}
           >
             <Users className="w-3.5 h-3.5" /> 2P Split
@@ -164,43 +164,43 @@ export const RpsModule: React.FC = () => {
       </div>
 
       {/* Main Clash Arena */}
-      <div ref={arenaRef} className="bg-white p-6 sm:p-8 rounded-[32px] border-[4.5px] border-[#1E1B4B] shadow-neo-xl mb-8">
+      <div ref={arenaRef} className="bg-white p-6 sm:p-8 rounded-[32px] border-[4.5px] border-ink shadow-neo-xl mb-8">
         {/* Score Board */}
-        <div className="grid grid-cols-3 items-center gap-4 pb-6 border-b-[3.5px] border-[#1E1B4B] mb-8 text-center">
-          <div className="p-4 rounded-2xl bg-[#FFF8E7] border-[3px] border-[#1E1B4B] shadow-neo-sm">
+        <div className="grid grid-cols-3 items-center gap-4 pb-6 border-b-[3.5px] border-ink mb-8 text-center">
+          <div className="p-4 rounded-2xl bg-cream border-[3px] border-ink shadow-neo-sm">
             <span className="text-xs font-bold text-gray-500 block">Player 1</span>
-            <span className="text-3xl font-heading font-black text-[#1E1B4B]">{p1Score}</span>
+            <span className="text-3xl font-heading font-black text-ink">{p1Score}</span>
           </div>
 
           <div className="flex flex-col items-center justify-center">
-            <div className="w-12 h-12 rounded-full bg-[#FFD93D] border-[3px] border-[#1E1B4B] shadow-neo-sm flex items-center justify-center font-heading font-black text-sm">
+            <div className="w-12 h-12 rounded-full bg-sunny border-[3px] border-ink shadow-neo-sm flex items-center justify-center font-heading font-black text-sm">
               VS
             </div>
             {mode === '1p' && (
-              <span className="text-[11px] font-bold text-[#FF9F1C] mt-2">🔥 Streak: {streak}</span>
+              <span className="text-[11px] font-bold text-tangerine mt-2">🔥 Streak: {streak}</span>
             )}
           </div>
 
-          <div className="p-4 rounded-2xl bg-[#FFF8E7] border-[3px] border-[#1E1B4B] shadow-neo-sm">
+          <div className="p-4 rounded-2xl bg-cream border-[3px] border-ink shadow-neo-sm">
             <span className="text-xs font-bold text-gray-500 block">{mode === '1p' ? 'Robo-Boss' : 'Player 2'}</span>
-            <span className="text-3xl font-heading font-black text-[#1E1B4B]">{p2Score}</span>
+            <span className="text-3xl font-heading font-black text-ink">{p2Score}</span>
           </div>
         </div>
 
         {/* Duel Stage Display */}
-        <div className="flex items-center justify-around py-8 bg-[#FFF8E7] rounded-3xl border-[3.5px] border-[#1E1B4B] mb-8">
+        <div className="flex items-center justify-around py-8 bg-cream rounded-3xl border-[3.5px] border-ink mb-8">
           <div className="flex flex-col items-center">
             <span className="text-xs font-bold text-gray-600 mb-2">Player 1</span>
-            <div className="w-24 h-24 rounded-3xl bg-white border-[3.5px] border-[#1E1B4B] shadow-neo flex items-center justify-center text-4xl">
+            <div className="w-24 h-24 rounded-3xl bg-white border-[3.5px] border-ink shadow-neo flex items-center justify-center text-4xl">
               {p1Choice ? CHOICES.find((c) => c.id === p1Choice)?.icon : '❔'}
             </div>
           </div>
 
-          <div className="text-2xl font-black text-[#1E1B4B]">⚔️</div>
+          <div className="text-2xl font-black text-ink">⚔️</div>
 
           <div className="flex flex-col items-center">
             <span className="text-xs font-bold text-gray-600 mb-2">{mode === '1p' ? 'Robo-Boss' : 'Player 2'}</span>
-            <div className="w-24 h-24 rounded-3xl bg-white border-[3.5px] border-[#1E1B4B] shadow-neo flex items-center justify-center text-4xl">
+            <div className="w-24 h-24 rounded-3xl bg-white border-[3.5px] border-ink shadow-neo flex items-center justify-center text-4xl">
               {p2Choice ? CHOICES.find((c) => c.id === p2Choice)?.icon : '❔'}
             </div>
           </div>
@@ -208,7 +208,7 @@ export const RpsModule: React.FC = () => {
 
         {/* Round Result Toast */}
         {roundResult && (
-          <div className="p-4 rounded-2xl bg-[#6BE585] border-[3px] border-[#1E1B4B] font-heading font-black text-center text-base text-[#1E1B4B] shadow-neo-sm mb-8 animate-bounce">
+          <div className="p-4 rounded-2xl bg-mint border-[3px] border-ink font-heading font-black text-center text-base text-ink shadow-neo-sm mb-8 animate-bounce">
             {roundResult}
           </div>
         )}
@@ -216,18 +216,18 @@ export const RpsModule: React.FC = () => {
         {/* Controls: 1P Mode */}
         {mode === '1p' && (
           <div>
-            <h3 className="text-center font-heading font-bold text-sm text-[#1E1B4B] mb-4">Choose Your Strike:</h3>
+            <h3 className="text-center font-heading font-bold text-sm text-ink mb-4">Choose Your Strike:</h3>
             <div className="grid grid-cols-3 gap-4">
               {CHOICES.map((choice) => (
                 <button
                   key={choice.id}
                   onClick={() => handle1PChoice(choice.id)}
                   disabled={isClashing}
-                  className="p-5 rounded-2xl border-[3.5px] border-[#1E1B4B] font-heading font-bold shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex flex-col items-center gap-2"
+                  className="p-5 rounded-2xl border-[3.5px] border-ink font-heading font-bold shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all flex flex-col items-center gap-2"
                   style={{ backgroundColor: choice.color }}
                 >
                   <span className="text-3xl">{choice.icon}</span>
-                  <span className="text-sm font-black text-[#1E1B4B]">{choice.label}</span>
+                  <span className="text-sm font-black text-ink">{choice.label}</span>
                 </button>
               ))}
             </div>
@@ -239,15 +239,15 @@ export const RpsModule: React.FC = () => {
           <div className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* P1 Picker */}
-              <div className="p-4 rounded-2xl bg-[#FFF8E7] border-[3px] border-[#1E1B4B]">
-                <h4 className="font-heading font-bold text-xs text-[#1E1B4B] mb-3">Player 1 Selection:</h4>
+              <div className="p-4 rounded-2xl bg-cream border-[3px] border-ink">
+                <h4 className="font-heading font-bold text-xs text-ink mb-3">Player 1 Selection:</h4>
                 <div className="grid grid-cols-3 gap-2">
                   {CHOICES.map((c) => (
                     <button
                       key={c.id}
                       onClick={() => handle2PSelect('p1', c.id)}
-                      className={`p-3 rounded-xl border-[2.5px] border-[#1E1B4B] text-center transition-all ${
-                        p1Choice === c.id ? 'bg-[#FFD93D] shadow-neo-sm scale-105' : 'bg-white'
+                      className={`p-3 rounded-xl border-[2.5px] border-ink text-center transition-all ${
+                        p1Choice === c.id ? 'bg-sunny shadow-neo-sm scale-105' : 'bg-white'
                       }`}
                     >
                       <span className="text-2xl block">{c.icon}</span>
@@ -257,15 +257,15 @@ export const RpsModule: React.FC = () => {
               </div>
 
               {/* P2 Picker */}
-              <div className="p-4 rounded-2xl bg-[#FFF8E7] border-[3px] border-[#1E1B4B]">
-                <h4 className="font-heading font-bold text-xs text-[#1E1B4B] mb-3">Player 2 Selection:</h4>
+              <div className="p-4 rounded-2xl bg-cream border-[3px] border-ink">
+                <h4 className="font-heading font-bold text-xs text-ink mb-3">Player 2 Selection:</h4>
                 <div className="grid grid-cols-3 gap-2">
                   {CHOICES.map((c) => (
                     <button
                       key={c.id}
                       onClick={() => handle2PSelect('p2', c.id)}
-                      className={`p-3 rounded-xl border-[2.5px] border-[#1E1B4B] text-center transition-all ${
-                        p2Choice === c.id ? 'bg-[#4CC9F0] shadow-neo-sm scale-105' : 'bg-white'
+                      className={`p-3 rounded-xl border-[2.5px] border-ink text-center transition-all ${
+                        p2Choice === c.id ? 'bg-sky shadow-neo-sm scale-105' : 'bg-white'
                       }`}
                     >
                       <span className="text-2xl block">{c.icon}</span>
@@ -279,7 +279,7 @@ export const RpsModule: React.FC = () => {
               <button
                 onClick={resolve2PBattle}
                 disabled={!p1Choice || !p2Choice || isClashing}
-                className="px-8 py-3.5 rounded-2xl bg-[#FF6B9D] text-white border-[3.5px] border-[#1E1B4B] font-heading font-black text-base shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all disabled:opacity-50"
+                className="px-8 py-3.5 rounded-2xl bg-bubblegum text-white border-[3.5px] border-ink font-heading font-black text-base shadow-neo hover:translate-y-[-2px] active:translate-y-[2px] transition-all disabled:opacity-50"
               >
                 Clash Paws Now! ⚔️
               </button>
@@ -292,7 +292,7 @@ export const RpsModule: React.FC = () => {
       <div className="flex justify-end">
         <button
           onClick={resetGame}
-          className="px-4 py-2 rounded-xl bg-white border-[2.5px] border-[#1E1B4B] font-heading font-bold text-xs text-[#1E1B4B] shadow-neo-sm flex items-center gap-1.5 hover:bg-[#FFF8E7]"
+          className="px-4 py-2 rounded-xl bg-white border-[2.5px] border-ink font-heading font-bold text-xs text-ink shadow-neo-sm flex items-center gap-1.5 hover:bg-cream"
         >
           <RotateCcw className="w-3.5 h-3.5" /> Reset Scores
         </button>

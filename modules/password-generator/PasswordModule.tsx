@@ -78,10 +78,10 @@ export const PasswordModule: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-[#6BE585] text-[#1E1B4B] p-6 rounded-3xl border-[4px] border-[#1E1B4B] shadow-neo-lg">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-mint text-ink p-6 rounded-3xl border-[4px] border-ink shadow-neo-lg">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white font-bold text-xs border-[2px] border-[#1E1B4B] mb-2 shadow-neo-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF6B9D]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white font-bold text-xs border-[2px] border-ink mb-2 shadow-neo-sm">
+            <Sparkles className="w-3.5 h-3.5 text-bubblegum" />
             App 10 • Stitch UI Model
           </div>
           <h1 className="text-3xl font-heading font-black">Potion Lab Password Vault</h1>
@@ -90,34 +90,34 @@ export const PasswordModule: React.FC = () => {
           </p>
         </div>
 
-        <div className="p-3 bg-white rounded-2xl border-[3px] border-[#1E1B4B] shadow-neo-sm flex items-center gap-2">
-          <KeyRound className="w-5 h-5 text-[#9B5DE5]" />
+        <div className="p-3 bg-white rounded-2xl border-[3px] border-ink shadow-neo-sm flex items-center gap-2">
+          <KeyRound className="w-5 h-5 text-grape" />
           <span className="font-heading font-bold text-xs">High Security</span>
         </div>
       </div>
 
       {/* Main Password Laboratory Container */}
-      <div className="bg-white p-6 sm:p-10 rounded-[36px] border-[4.5px] border-[#1E1B4B] shadow-neo-xl">
+      <div className="bg-white p-6 sm:p-10 rounded-[36px] border-[4.5px] border-ink shadow-neo-xl">
         {/* Output Flask Display */}
         <div
           ref={passDisplayRef}
-          className="relative bg-[#FFF8E7] p-6 rounded-3xl border-[3.5px] border-[#1E1B4B] shadow-inner mb-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          className="relative bg-cream p-6 rounded-3xl border-[3.5px] border-ink shadow-inner mb-8 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <div className="font-mono-code font-black text-xl sm:text-2xl text-[#1E1B4B] tracking-wider break-all text-center sm:text-left select-all">
+          <div className="font-mono-code font-black text-xl sm:text-2xl text-ink tracking-wider break-all text-center sm:text-left select-all">
             {password}
           </div>
 
           <div className="flex items-center gap-2 flex-shrink-0">
             <button
               onClick={generatePassword}
-              className="p-3 rounded-2xl bg-white border-[2.5px] border-[#1E1B4B] shadow-neo-sm hover:bg-[#FFD93D] transition-all"
+              className="p-3 rounded-2xl bg-white border-[2.5px] border-ink shadow-neo-sm hover:bg-sunny transition-all"
               title="Concoct new password"
             >
-              <RefreshCw className="w-5 h-5 text-[#1E1B4B]" />
+              <RefreshCw className="w-5 h-5 text-ink" />
             </button>
             <button
               onClick={copyToClipboard}
-              className="px-5 py-3 rounded-2xl bg-[#FFD93D] border-[2.5px] border-[#1E1B4B] font-heading font-black text-sm text-[#1E1B4B] shadow-neo-sm hover:bg-[#ffe173] active:translate-y-[2px] transition-all flex items-center gap-2"
+              className="px-5 py-3 rounded-2xl bg-sunny border-[2.5px] border-ink font-heading font-black text-sm text-ink shadow-neo-sm hover:bg-[#ffe173] active:translate-y-[2px] transition-all flex items-center gap-2"
             >
               {copied ? <Check className="w-4 h-4 text-emerald-700" /> : <Copy className="w-4 h-4" />}
               <span>{copied ? 'Copied!' : 'Copy Vault'}</span>
@@ -127,26 +127,26 @@ export const PasswordModule: React.FC = () => {
 
         {/* Strength & Crack Estimation Meters */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-          <div className="p-4 rounded-2xl bg-[#FFF8E7] border-[3px] border-[#1E1B4B] shadow-neo-sm">
+          <div className="p-4 rounded-2xl bg-cream border-[3px] border-ink shadow-neo-sm">
             <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-1">
               Potion Potency:
             </span>
             <div className="flex items-center gap-2">
               <div
-                className="w-4 h-4 rounded-full border-[2px] border-[#1E1B4B]"
+                className="w-4 h-4 rounded-full border-[2px] border-ink"
                 style={{ backgroundColor: strength.color }}
               />
-              <span className="font-heading font-black text-base text-[#1E1B4B]">
+              <span className="font-heading font-black text-base text-ink">
                 {strength.label}
               </span>
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-[#FFF8E7] border-[3px] border-[#1E1B4B] shadow-neo-sm">
+          <div className="p-4 rounded-2xl bg-cream border-[3px] border-ink shadow-neo-sm">
             <span className="text-xs font-bold text-gray-500 uppercase tracking-wider block mb-1">
               Estimated Brute-Force Time:
             </span>
-            <span className="font-heading font-black text-base text-[#1E1B4B]">
+            <span className="font-heading font-black text-base text-ink">
               ⏱️ {strength.crackTime}
             </span>
           </div>
@@ -158,7 +158,7 @@ export const PasswordModule: React.FC = () => {
           <div>
             <div className="flex justify-between items-center text-xs font-bold text-gray-600 mb-2">
               <span>Password Length:</span>
-              <span className="font-mono-code text-base font-black text-[#1E1B4B]">{length} Characters</span>
+              <span className="font-mono-code text-base font-black text-ink">{length} Characters</span>
             </div>
             <input
               type="range"
@@ -166,7 +166,7 @@ export const PasswordModule: React.FC = () => {
               max="48"
               value={length}
               onChange={(e) => setLength(Number(e.target.value))}
-              className="w-full h-3 bg-[#FFF8E7] rounded-lg appearance-none cursor-pointer border-[2px] border-[#1E1B4B] accent-[#9B5DE5]"
+              className="w-full h-3 bg-cream rounded-lg appearance-none cursor-pointer border-[2px] border-ink accent-grape"
             />
           </div>
 
@@ -184,12 +184,12 @@ export const PasswordModule: React.FC = () => {
                   item.set(!item.state);
                   playSound('click');
                 }}
-                className={`p-3.5 rounded-2xl border-[3px] border-[#1E1B4B] font-heading font-bold text-xs flex items-center justify-between transition-all ${
-                  item.state ? 'bg-[#FFD93D] shadow-neo-sm scale-105' : 'bg-[#FFF8E7] opacity-60'
+                className={`p-3.5 rounded-2xl border-[3px] border-ink font-heading font-bold text-xs flex items-center justify-between transition-all ${
+                  item.state ? 'bg-sunny shadow-neo-sm scale-105' : 'bg-cream opacity-60'
                 }`}
               >
                 <span>{item.icon} {item.label}</span>
-                {item.state && <Check className="w-3.5 h-3.5 text-[#1E1B4B]" />}
+                {item.state && <Check className="w-3.5 h-3.5 text-ink" />}
               </button>
             ))}
           </div>

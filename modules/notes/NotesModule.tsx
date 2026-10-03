@@ -109,28 +109,28 @@ export const NotesModule: React.FC = () => {
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-[#6BE585] p-6 rounded-3xl border-[4px] border-[#1E1B4B] shadow-neo-lg">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 bg-mint p-6 rounded-3xl border-[4px] border-ink shadow-neo-lg">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-[#1E1B4B] font-bold text-xs border-[2px] border-[#1E1B4B] mb-2 shadow-neo-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF6B9D]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-ink font-bold text-xs border-[2px] border-ink mb-2 shadow-neo-sm">
+            <Sparkles className="w-3.5 h-3.5 text-bubblegum" />
             App 04 • Stitch UI Model
           </div>
-          <h1 className="text-3xl font-heading font-black text-[#1E1B4B]">Corkboard Studio & Notes</h1>
-          <p className="text-sm font-semibold text-[#1E1B4B]/80 mt-1">
+          <h1 className="text-3xl font-heading font-black text-ink">Corkboard Studio & Notes</h1>
+          <p className="text-sm font-semibold text-ink/80 mt-1">
             Sticky notes board, dual-pane markdown editor & AI auto-tagger.
           </p>
         </div>
 
         {/* View Switcher & New Note Button */}
         <div className="flex items-center gap-2.5">
-          <div className="flex items-center bg-white p-1 rounded-2xl border-[3px] border-[#1E1B4B] shadow-neo-sm">
+          <div className="flex items-center bg-white p-1 rounded-2xl border-[3px] border-ink shadow-neo-sm">
             <button
               onClick={() => {
                 setViewMode('board');
                 playSound('click');
               }}
               className={`px-3 py-1.5 rounded-xl font-heading font-bold text-xs transition-all ${
-                viewMode === 'board' ? 'bg-[#FFD93D] text-[#1E1B4B]' : 'text-gray-600'
+                viewMode === 'board' ? 'bg-sunny text-ink' : 'text-gray-600'
               }`}
             >
               📌 Corkboard
@@ -141,7 +141,7 @@ export const NotesModule: React.FC = () => {
                 playSound('click');
               }}
               className={`px-3 py-1.5 rounded-xl font-heading font-bold text-xs transition-all ${
-                viewMode === 'editor' ? 'bg-[#FFD93D] text-[#1E1B4B]' : 'text-gray-600'
+                viewMode === 'editor' ? 'bg-sunny text-ink' : 'text-gray-600'
               }`}
             >
               📝 Markdown
@@ -150,7 +150,7 @@ export const NotesModule: React.FC = () => {
 
           <button
             onClick={createNewNote}
-            className="px-4 py-2.5 rounded-2xl bg-[#FFD93D] border-[3px] border-[#1E1B4B] font-heading font-black text-xs text-[#1E1B4B] shadow-neo-sm hover:translate-y-[-1px] active:translate-y-[2px] transition-all flex items-center gap-1.5"
+            className="px-4 py-2.5 rounded-2xl bg-sunny border-[3px] border-ink font-heading font-black text-xs text-ink shadow-neo-sm hover:translate-y-[-1px] active:translate-y-[2px] transition-all flex items-center gap-1.5"
           >
             <Plus className="w-4 h-4" /> New Sticky
           </button>
@@ -159,7 +159,7 @@ export const NotesModule: React.FC = () => {
 
       {/* Mode 1: Corkboard View */}
       {viewMode === 'board' && (
-        <div className="bg-[#FFF8E7] p-8 rounded-[32px] border-[4.5px] border-[#1E1B4B] shadow-neo-xl min-h-[460px]">
+        <div className="bg-cream p-8 rounded-[32px] border-[4.5px] border-ink shadow-neo-xl min-h-[460px]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence>
               {notes.map((note) => (
@@ -174,27 +174,27 @@ export const NotesModule: React.FC = () => {
                     setViewMode('editor');
                     playSound('click');
                   }}
-                  className="p-6 rounded-3xl border-[3.5px] border-[#1E1B4B] shadow-neo cursor-pointer hover:translate-y-[-4px] hover:rotate-1 transition-all relative flex flex-col justify-between min-h-[220px]"
+                  className="p-6 rounded-3xl border-[3.5px] border-ink shadow-neo cursor-pointer hover:translate-y-[-4px] hover:rotate-1 transition-all relative flex flex-col justify-between min-h-[220px]"
                   style={{ backgroundColor: note.color }}
                 >
                   {/* Top Bar: Pin & Delete */}
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[11px] font-bold text-[#1E1B4B]/60 font-mono-code">
+                    <span className="text-[11px] font-bold text-ink/60 font-mono-code">
                       {note.updatedAt}
                     </span>
                     <div className="flex items-center gap-1.5">
                       <button
                         onClick={(e) => togglePin(note.id, e)}
-                        className={`p-1.5 rounded-lg border-[2px] border-[#1E1B4B] ${
-                          note.pinned ? 'bg-[#FFD93D]' : 'bg-white'
+                        className={`p-1.5 rounded-lg border-[2px] border-ink ${
+                          note.pinned ? 'bg-sunny' : 'bg-white'
                         }`}
                         title="Pin note"
                       >
-                        <Pin className="w-3.5 h-3.5 text-[#1E1B4B]" />
+                        <Pin className="w-3.5 h-3.5 text-ink" />
                       </button>
                       <button
                         onClick={(e) => deleteNote(note.id, e)}
-                        className="p-1.5 rounded-lg bg-white border-[2px] border-[#1E1B4B] hover:bg-[#FF6B9D] hover:text-white transition-colors"
+                        className="p-1.5 rounded-lg bg-white border-[2px] border-ink hover:bg-bubblegum hover:text-white transition-colors"
                         title="Delete note"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -204,20 +204,20 @@ export const NotesModule: React.FC = () => {
 
                   {/* Body */}
                   <div>
-                    <h3 className="font-heading font-black text-lg text-[#1E1B4B] mb-2 leading-tight">
+                    <h3 className="font-heading font-black text-lg text-ink mb-2 leading-tight">
                       {note.title}
                     </h3>
-                    <p className="text-xs font-semibold text-[#1E1B4B]/80 line-clamp-3">
+                    <p className="text-xs font-semibold text-ink/80 line-clamp-3">
                       {note.content}
                     </p>
                   </div>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5 mt-4 pt-3 border-t-[2px] border-[#1E1B4B]/20">
+                  <div className="flex flex-wrap gap-1.5 mt-4 pt-3 border-t-[2px] border-ink/20">
                     {note.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="px-2 py-0.5 rounded-full bg-white/70 border border-[#1E1B4B] text-[10px] font-bold text-[#1E1B4B]"
+                        className="px-2 py-0.5 rounded-full bg-white/70 border border-ink text-[10px] font-bold text-ink"
                       >
                         {tag}
                       </span>
@@ -232,26 +232,26 @@ export const NotesModule: React.FC = () => {
 
       {/* Mode 2: Split Markdown Editor */}
       {viewMode === 'editor' && activeNote && (
-        <div className="bg-white p-6 sm:p-8 rounded-[32px] border-[4.5px] border-[#1E1B4B] shadow-neo-xl">
+        <div className="bg-white p-6 sm:p-8 rounded-[32px] border-[4.5px] border-ink shadow-neo-xl">
           {/* Editor Header Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b-[3px] border-[#1E1B4B] mb-6">
+          <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b-[3px] border-ink mb-6">
             <input
               type="text"
               value={activeNote.title}
               onChange={(e) => updateActiveNote({ title: e.target.value })}
-              className="font-heading font-black text-2xl text-[#1E1B4B] bg-transparent outline-none flex-1 min-w-[200px]"
+              className="font-heading font-black text-2xl text-ink bg-transparent outline-none flex-1 min-w-[200px]"
               placeholder="Note Title..."
             />
 
             <div className="flex items-center gap-2">
               {/* Color Swatches */}
-              <div className="flex items-center gap-1 bg-[#FFF8E7] p-1 rounded-xl border-[2px] border-[#1E1B4B]">
+              <div className="flex items-center gap-1 bg-cream p-1 rounded-xl border-[2px] border-ink">
                 {NOTE_COLORS.map((c) => (
                   <button
                     key={c}
                     onClick={() => updateActiveNote({ color: c })}
-                    className={`w-5 h-5 rounded-full border-[2px] border-[#1E1B4B] transition-transform ${
-                      activeNote.color === c ? 'scale-125 ring-2 ring-[#1E1B4B]' : ''
+                    className={`w-5 h-5 rounded-full border-[2px] border-ink transition-transform ${
+                      activeNote.color === c ? 'scale-125 ring-2 ring-ink' : ''
                     }`}
                     style={{ backgroundColor: c }}
                   />
@@ -261,7 +261,7 @@ export const NotesModule: React.FC = () => {
               {/* AI Auto Tagger */}
               <button
                 onClick={runAiTagger}
-                className="px-3 py-1.5 rounded-xl bg-[#9B5DE5] text-white border-[2.5px] border-[#1E1B4B] font-heading font-bold text-xs shadow-neo-sm hover:translate-y-[-1px] transition-all flex items-center gap-1.5"
+                className="px-3 py-1.5 rounded-xl bg-grape text-white border-[2.5px] border-ink font-heading font-bold text-xs shadow-neo-sm hover:translate-y-[-1px] transition-all flex items-center gap-1.5"
                 title="AI Magic Auto Tagger"
               >
                 <Wand2 className="w-3.5 h-3.5" /> AI Tagger
@@ -270,7 +270,7 @@ export const NotesModule: React.FC = () => {
               {/* Toggle Markdown Preview */}
               <button
                 onClick={() => setMarkdownPreview(!markdownPreview)}
-                className="p-2 rounded-xl bg-[#FFF8E7] border-[2.5px] border-[#1E1B4B] text-[#1E1B4B] hover:bg-[#FFD93D] transition-all"
+                className="p-2 rounded-xl bg-cream border-[2.5px] border-ink text-ink hover:bg-sunny transition-all"
                 title="Toggle Markdown Split View"
               >
                 {markdownPreview ? <Eye className="w-4 h-4" /> : <Edit3 className="w-4 h-4" />}
@@ -288,7 +288,7 @@ export const NotesModule: React.FC = () => {
               <textarea
                 value={activeNote.content}
                 onChange={(e) => updateActiveNote({ content: e.target.value })}
-                className="flex-1 w-full p-4 rounded-2xl bg-[#FFF8E7] border-[3px] border-[#1E1B4B] font-mono-code text-sm text-[#1E1B4B] resize-none outline-none focus:bg-white focus:ring-2 focus:ring-[#4CC9F0] transition-all"
+                className="flex-1 w-full p-4 rounded-2xl bg-cream border-[3px] border-ink font-mono-code text-sm text-ink resize-none outline-none focus:bg-white focus:ring-2 focus:ring-sky transition-all"
                 placeholder="Write in Markdown (# Heading, - List item, **bold**)..."
               />
             </div>
@@ -298,8 +298,8 @@ export const NotesModule: React.FC = () => {
               <span className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 flex items-center gap-1.5">
                 <Eye className="w-3.5 h-3.5" /> Live Rendered Preview
               </span>
-              <div className="flex-1 p-5 rounded-2xl border-[3px] border-[#1E1B4B] overflow-y-auto" style={{ backgroundColor: activeNote.color }}>
-                <div className="prose prose-sm max-w-none text-[#1E1B4B]">
+              <div className="flex-1 p-5 rounded-2xl border-[3px] border-ink overflow-y-auto" style={{ backgroundColor: activeNote.color }}>
+                <div className="prose prose-sm max-w-none text-ink">
                   {activeNote.content.split('\n').map((line, idx) => {
                     if (line.startsWith('## ')) {
                       return <h2 key={idx} className="font-heading font-black text-xl mb-2">{line.replace('## ', '')}</h2>;
@@ -310,7 +310,7 @@ export const NotesModule: React.FC = () => {
                     if (line.startsWith('- ')) {
                       return (
                         <div key={idx} className="flex items-center gap-2 my-1 font-semibold">
-                          <Check className="w-4 h-4 text-[#1E1B4B]" />
+                          <Check className="w-4 h-4 text-ink" />
                           <span>{line.replace('- ', '')}</span>
                         </div>
                       );
